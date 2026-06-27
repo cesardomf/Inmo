@@ -84,6 +84,10 @@
   header.scrolled .lang button{color:var(--ink-soft)}
   .lang button.on{background:var(--sun);color:#fff}
   .menu-btn{display:none;background:none;border:0;cursor:pointer}
+  .nav-toggle{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+  .menu-btn .i-close{display:none}
+  .nav-toggle:checked ~ .nav-right .menu-btn .i-open{display:none}
+  .nav-toggle:checked ~ .nav-right .menu-btn .i-close{display:block}
 
   /* hero */
   .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 70px;overflow:hidden;color:#fff}
@@ -259,11 +263,10 @@
     .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:2px;display:none;
       background:var(--chalk-2);padding:12px 24px 20px;border-top:1px solid var(--line);
       box-shadow:0 24px 40px -22px rgba(14,61,69,.5)}
-    header.open .nav-links{display:flex}
-    header.open{background:rgba(247,243,234,.98);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+    .nav-toggle:checked ~ .nav-links{display:flex}
     .nav-links a{color:var(--ink-soft)!important;padding:.7rem 0;border-bottom:1px solid var(--line);font-size:1rem}
-    .menu-btn{display:block;color:#fff}
-    header.scrolled .menu-btn,header.open .menu-btn{color:var(--ink)}
+    .menu-btn{display:flex;align-items:center;color:#fff}
+    header.scrolled .menu-btn{color:var(--ink)}
     .nav-cta{display:none}
     .grid3,.tgrid,.life-grid,.zones-grid,.road,.svc-grid{grid-template-columns:1fr}
     section.block{padding:70px 0}
@@ -277,6 +280,8 @@
 
   /* services teaser */
   .svc-teaser{background:linear-gradient(180deg,var(--chalk-2),var(--chalk))}
+  .blog-teaser{background:var(--chalk-2)}
+  .blog-teaser .card{cursor:pointer}
   .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
   .svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;transition:transform .2s,box-shadow .2s}
   .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
@@ -301,6 +306,7 @@
 
 <header id="hd">
   <div class="wrap nav">
+    <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
     <a href="#top" class="brand">
       <svg class="mark" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" fill="#EE6C2D"/><path d="M11 26c4-7 14-7 18 0" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="14" r="4.5" fill="#FFD9A8"/></svg>
       Vía Sol
@@ -320,9 +326,10 @@
         <button data-lang="es">ES</button>
       </div>
       <a href="#contact" class="btn btn-sun nav-cta" data-i18n="nav.cta" style="padding:.55rem 1.1rem;font-size:.85rem">Rozmowa</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
+      <label for="navtoggle" class="menu-btn" id="menuBtn" role="button" tabindex="0" aria-label="Menu">
+        <svg class="i-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="i-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
     </div>
   </div>
 </header>
@@ -543,6 +550,33 @@
   </div>
 </section>
 
+<!-- BLOG TEASER -->
+<section class="block blog-teaser" id="guide">
+  <div class="wrap">
+    <div class="prop-head reveal">
+      <div>
+        <span class="eyebrow" data-i18n="blg.eyebrow">Poradnik</span>
+        <h2 class="big" data-i18n="blg.h2">Zanim zdecydujesz, dowiedz się więcej</h2>
+      </div>
+      <a href="blog/index.html" id="blgAll" class="btn btn-ink" data-i18n="blg.all">Zobacz cały poradnik</a>
+    </div>
+    <div class="grid3" style="margin-top:40px">
+      <a class="card reveal" id="blgNie" href="blog/pl/numer-nie-w-hiszpanii.html">
+        <div class="ph" style="background-color:#1C6E7E;background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=70')"><span class="badge" data-i18n="blg.c1cat">Formalności</span></div>
+        <div class="body"><h3 data-i18n="blg.c1t">Numer NIE w Hiszpanii</h3><p class="cdesc" data-i18n="blg.c1d">Co to jest i jak go zdobyć jako obywatel UE.</p><span class="askbtn" data-i18n="blg.read">Czytaj →</span></div>
+      </a>
+      <a class="card reveal" id="blgCostes" href="blog/pl/ile-kosztuje-zakup-nieruchomosci-w-hiszpanii.html">
+        <div class="ph" style="background-color:#1C6E7E;background-image:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=70')"><span class="badge" data-i18n="blg.c2cat">Podatki</span></div>
+        <div class="body"><h3 data-i18n="blg.c2t">Ile kosztuje zakup</h3><p class="cdesc" data-i18n="blg.c2d">Realne podatki i opłaty w 2026, bez niespodzianek.</p><span class="askbtn" data-i18n="blg.read">Czytaj →</span></div>
+      </a>
+      <a class="card reveal" id="blgProceso" href="blog/pl/jak-kupic-nieruchomosc-na-costa-blanca.html">
+        <div class="ph" style="background-color:#1C6E7E;background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=600&q=70')"><span class="badge" data-i18n="blg.c3cat">Proces</span></div>
+        <div class="body"><h3 data-i18n="blg.c3t">Zakup krok po kroku</h3><p class="cdesc" data-i18n="blg.c3d">Od rezerwacji po klucze, w jasnej kolejności.</p><span class="askbtn" data-i18n="blg.read">Czytaj →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="block contact" id="contact">
   <div class="wrap contact-grid">
@@ -671,6 +705,7 @@ const I18N = {
     "life.3t":"Kuchnia i wino","life.3d":"Paella, świeże ryby, lokalne targi i wino. Śródziemnomorski styl życia każdego dnia.",
     "life.4t":"Bezpieczeństwo","life.4d":"Spokojne miasteczka i jeden z najbezpieczniejszych regionów w Europie dla rodzin.",
     "svc.eyebrow":"Pełna obsługa, jeden zespół","svc.h2":"Zajmujemy się wszystkim","svc.sub":"Od numeru NIE po meble w salonie. Ty wybierasz dom — resztą zajmujemy się my.","svc.1t":"NIE i formalności","svc.1d":"Numer NIE, rejestracja obywatela UE i wszystkie urzędy — załatwiamy to za Ciebie.","svc.2t":"Prawnik i notariusz","svc.2d":"Niezależny prawnik sprawdza każdy dokument. Bezpieczna transakcja u notariusza.","svc.3t":"Hipoteka i bank","svc.3d":"Konto w hiszpańskim banku i kredyt hipoteczny dla nierezydentów na najlepszych warunkach.","svc.4t":"Media i ubezpieczenie","svc.4d":"Prąd, woda, internet i ubezpieczenie domu — podłączone i przepisane na Ciebie.","svc.5t":"Wnętrza i meble","svc.5d":"Projekt wnętrz, remont i pakiety mebli. Wejdziesz do gotowego, urządzonego domu.","svc.6t":"Opieka po zakupie","svc.6d":"Zarządzanie i opieka nad nieruchomością, gdy Ty jesteś w Polsce.","svc.cta":"Zobacz wszystkie usługi",
+    "blg.eyebrow":"Poradnik","blg.h2":"Zanim zdecydujesz, dowiedz się więcej","blg.all":"Zobacz cały poradnik","blg.read":"Czytaj →","blg.c1cat":"Formalności","blg.c1t":"Numer NIE w Hiszpanii","blg.c1d":"Co to jest i jak go zdobyć jako obywatel UE.","blg.c2cat":"Podatki","blg.c2t":"Ile kosztuje zakup","blg.c2d":"Realne podatki i opłaty w 2026, bez niespodzianek.","blg.c3cat":"Proces","blg.c3t":"Zakup krok po kroku","blg.c3d":"Od rezerwacji po klucze, w jasnej kolejności.",
     "cost.eyebrow":"Bez niespodzianek","cost.h2":"Pełna przejrzystość kosztów",
     "cost.body":"Cena to nie wszystko. Zanim cokolwiek podpiszesz, pokazujemy Ci realny koszt całkowity — podatki, notariusza, rejestr i prawnika. Wiesz dokładnie, ile zapłacisz. Zawsze.","cost.cta":"Oblicz swój koszt",
     "cost.r1":"Cena nieruchomości","cost.r2":"Podatek (ITP lub VAT)","cost.r3":"Notariusz i rejestr","cost.r4":"Niezależny prawnik","cost.total":"Koszt całkowity, szacunkowo",
@@ -723,6 +758,7 @@ const I18N = {
     "life.3t":"Food & wine","life.3d":"Paella, fresh fish, local markets and wine. The Mediterranean way of life, every day.",
     "life.4t":"Safety","life.4d":"Calm towns and one of the safest regions in Europe for families.",
     "svc.eyebrow":"One team, the whole journey","svc.h2":"We handle everything","svc.sub":"From the NIE number to the sofa in your living room. You choose the home — we take care of the rest.","svc.1t":"NIE & paperwork","svc.1d":"NIE number, EU-citizen registration and every government office — handled for you.","svc.2t":"Lawyer & notary","svc.2d":"An independent lawyer checks every document. A safe signing at the notary.","svc.3t":"Mortgage & bank","svc.3d":"A Spanish bank account and a non-resident mortgage on the best possible terms.","svc.4t":"Utilities & insurance","svc.4d":"Electricity, water, internet and home insurance — connected and put in your name.","svc.5t":"Interiors & furniture","svc.5d":"Interior design, renovation and furniture packs. Walk into a finished, furnished home.","svc.6t":"Aftercare","svc.6d":"Property management and care while you're back in Poland.","svc.cta":"See all our services",
+    "blg.eyebrow":"Guide","blg.h2":"Learn before you decide","blg.all":"See the full guide","blg.read":"Read →","blg.c1cat":"Paperwork","blg.c1t":"The NIE number in Spain","blg.c1d":"What it is and how to get it as an EU citizen.","blg.c2cat":"Taxes","blg.c2t":"What buying really costs","blg.c2d":"The real taxes and fees in 2026, no surprises.","blg.c3cat":"Process","blg.c3t":"Buying step by step","blg.c3d":"From reservation to keys, in clear order.",
     "cost.eyebrow":"No surprises","cost.h2":"Full cost transparency",
     "cost.body":"Price isn't everything. Before you sign anything, we show you the real total cost — taxes, notary, registry and lawyer. You know exactly what you'll pay. Always.","cost.cta":"Calculate your cost",
     "cost.r1":"Property price","cost.r2":"Tax (transfer or VAT)","cost.r3":"Notary & registry","cost.r4":"Independent lawyer","cost.total":"Estimated total cost",
@@ -775,6 +811,7 @@ const I18N = {
     "life.3t":"Gastronomía y vino","life.3d":"Paella, pescado fresco, mercados locales y vino. El estilo de vida mediterráneo, cada día.",
     "life.4t":"Seguridad","life.4d":"Pueblos tranquilos y una de las regiones más seguras de Europa para las familias.",
     "svc.eyebrow":"Un solo equipo, todo el camino","svc.h2":"Nos ocupamos de todo","svc.sub":"Del número NIE al sofá de tu salón. Tú eliges la casa; de lo demás nos encargamos nosotros.","svc.1t":"NIE y trámites","svc.1d":"Número NIE, registro de ciudadano de la UE y todas las gestiones — lo hacemos por ti.","svc.2t":"Abogado y notaría","svc.2d":"Un abogado independiente revisa cada documento. Una firma segura ante notario.","svc.3t":"Hipoteca y banco","svc.3d":"Cuenta en banco español e hipoteca para no residentes en las mejores condiciones.","svc.4t":"Suministros y seguro","svc.4d":"Luz, agua, internet y seguro de hogar — dados de alta y a tu nombre.","svc.5t":"Interiorismo y muebles","svc.5d":"Proyecto de interiorismo, reforma y packs de muebles. Entras a una casa lista y amueblada.","svc.6t":"Postventa","svc.6d":"Gestión y cuidado de tu vivienda mientras estás en Polonia.","svc.cta":"Ver todos los servicios",
+    "blg.eyebrow":"Guía","blg.h2":"Aprende antes de decidir","blg.all":"Ver toda la guía","blg.read":"Leer →","blg.c1cat":"Trámites","blg.c1t":"El número NIE en España","blg.c1d":"Qué es y cómo conseguirlo siendo de la UE.","blg.c2cat":"Impuestos","blg.c2t":"Cuánto cuesta comprar","blg.c2d":"Impuestos y gastos reales en 2026, sin sorpresas.","blg.c3cat":"Proceso","blg.c3t":"Comprar paso a paso","blg.c3d":"De la reserva a las llaves, en orden.",
     "cost.eyebrow":"Sin sorpresas","cost.h2":"Transparencia total de costes",
     "cost.body":"El precio no lo es todo. Antes de firmar nada, te mostramos el coste total real: impuestos, notaría, registro y abogado. Sabes exactamente lo que pagarás. Siempre.","cost.cta":"Calcula tu coste",
     "cost.r1":"Precio de la propiedad","cost.r2":"Impuesto (ITP o IVA)","cost.r3":"Notaría y registro","cost.r4":"Abogado independiente","cost.total":"Coste total estimado",
@@ -797,6 +834,12 @@ const I18N = {
 };
 const TITLES = {pl:"Vía Sol — Polskie biuro nieruchomości na Costa Blanca",en:"Vía Sol — Polish-speaking estate agency on the Costa Blanca",es:"Vía Sol — Inmobiliaria para el mercado polaco en la Costa Blanca"};
 const WA = {pl:"Dzień dobry! Piszę w sprawie nieruchomości na Costa Blanca.",en:"Hello! I'm writing about a property on the Costa Blanca.",es:"¡Hola! Escribo por una propiedad en la Costa Blanca."};
+const BLOGL = {
+  hub:{pl:"blog/pl/",en:"blog/en/",es:"blog/es/"},
+  nie:{pl:"blog/pl/numer-nie-w-hiszpanii.html",en:"blog/en/nie-number-in-spain.html",es:"blog/es/numero-nie-en-espana.html"},
+  costes:{pl:"blog/pl/ile-kosztuje-zakup-nieruchomosci-w-hiszpanii.html",en:"blog/en/cost-of-buying-property-in-spain.html",es:"blog/es/cuanto-cuesta-comprar-casa-en-espana.html"},
+  proceso:{pl:"blog/pl/jak-kupic-nieruchomosc-na-costa-blanca.html",en:"blog/en/how-to-buy-property-costa-blanca-step-by-step.html",es:"blog/es/como-comprar-vivienda-costa-blanca-paso-a-paso.html"}
+};
 
 function setLang(lang){
   const dict = I18N[lang]; if(!dict) return;
@@ -812,6 +855,8 @@ function setLang(lang){
   });
   document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on", b.dataset.lang===lang));
   const wa=document.getElementById("waFloat"); if(wa&&WA[lang]) wa.href="https://wa.me/34600000000?text="+encodeURIComponent(WA[lang]);
+  const setH=(id,u)=>{const e=document.getElementById(id);if(e&&u)e.setAttribute("href",u);};
+  setH("blgAll",BLOGL.hub[lang]);setH("blgNie",BLOGL.nie[lang]);setH("blgCostes",BLOGL.costes[lang]);setH("blgProceso",BLOGL.proceso[lang]);
 }
 document.querySelectorAll("#lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
 
@@ -832,12 +877,9 @@ document.getElementById("leadForm").addEventListener("submit",e=>{
   document.getElementById("formOk").classList.add("show");
 });
 
-// mobile menu
-const menuBtn=document.getElementById("menuBtn");
-if(menuBtn){
-  menuBtn.addEventListener("click",()=>{const o=hd.classList.toggle("open");menuBtn.setAttribute("aria-expanded",o);});
-  document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>{hd.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");}));
-}
+// mobile menu is CSS-only (checkbox); JS just closes it after a link tap
+const navtoggle=document.getElementById("navtoggle");
+if(navtoggle) document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>{navtoggle.checked=false;}));
 </script>
 </body>
 </html>
