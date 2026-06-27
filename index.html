@@ -316,7 +316,7 @@
       <a href="promociones.html" data-i18n="nav.properties">Oferty</a>
       <a href="servicios.html" data-i18n="nav.services">Usługi</a>
       <a href="#life" data-i18n="nav.life">Życie tutaj</a>
-      <a href="blog/index.html" data-i18n="nav.blog">Poradnik</a>
+      <a href="blog/pl/" id="navBlog" data-i18n="nav.blog">Poradnik</a>
       <a href="#contact" data-i18n="nav.contact">Kontakt</a>
     </nav>
     <div class="nav-right">
@@ -558,7 +558,7 @@
         <span class="eyebrow" data-i18n="blg.eyebrow">Poradnik</span>
         <h2 class="big" data-i18n="blg.h2">Zanim zdecydujesz, dowiedz się więcej</h2>
       </div>
-      <a href="blog/index.html" id="blgAll" class="btn btn-ink" data-i18n="blg.all">Zobacz cały poradnik</a>
+      <a href="blog/pl/" id="blgAll" class="btn btn-ink" data-i18n="blg.all">Zobacz cały poradnik</a>
     </div>
     <div class="grid3" style="margin-top:40px">
       <a class="card reveal" id="blgNie" href="blog/pl/numer-nie-w-hiszpanii.html">
@@ -646,7 +646,7 @@
         <h4 data-i18n="foot.explore">Nawigacja</h4>
         <a href="promociones.html" data-i18n="nav.properties">Oferty</a>
         <a href="servicios.html" data-i18n="nav.services">Usługi</a>
-        <a href="blog/index.html" data-i18n="nav.blog">Poradnik</a>
+        <a href="blog/pl/" id="footBlog" data-i18n="nav.blog">Poradnik</a>
         <a href="#process" data-i18n="nav.process">Proces</a>
         <a href="#life" data-i18n="nav.life">Życie tutaj</a>
       </div>
@@ -856,6 +856,7 @@ function setLang(lang){
   document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on", b.dataset.lang===lang));
   const wa=document.getElementById("waFloat"); if(wa&&WA[lang]) wa.href="https://wa.me/34600000000?text="+encodeURIComponent(WA[lang]);
   const setH=(id,u)=>{const e=document.getElementById(id);if(e&&u)e.setAttribute("href",u);};
+  setH("navBlog",BLOGL.hub[lang]);setH("footBlog",BLOGL.hub[lang]);
   setH("blgAll",BLOGL.hub[lang]);setH("blgNie",BLOGL.nie[lang]);setH("blgCostes",BLOGL.costes[lang]);setH("blgProceso",BLOGL.proceso[lang]);
 }
 document.querySelectorAll("#lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));

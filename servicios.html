@@ -137,7 +137,7 @@
       <a href="index.html#process" data-i18n="nav.process">Proces</a>
       <a href="promociones.html" data-i18n="nav.properties">Oferty</a>
       <a href="servicios.html" data-i18n="nav.services">Usługi</a>
-      <a href="blog/index.html" data-i18n="nav.blog">Poradnik</a>
+      <a href="blog/pl/" id="navBlog" data-i18n="nav.blog">Poradnik</a>
       <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
     </nav>
     <div class="nav-right">
@@ -296,7 +296,7 @@
         <a href="index.html" data-i18n="foot.home">Strona główna</a>
         <a href="promociones.html" data-i18n="nav.properties">Oferty</a>
         <a href="servicios.html" data-i18n="nav.services">Usługi</a>
-        <a href="blog/index.html" data-i18n="nav.blog">Poradnik</a>
+        <a href="blog/pl/" id="footBlog" data-i18n="nav.blog">Poradnik</a>
       </div>
       <div>
         <h4 data-i18n="foot.contact">Kontakt</h4>
@@ -447,10 +447,12 @@ const I18N={
 };
 const TITLES={pl:"Usługi: NIE, prawnik, hipoteka, media i wykończenie | Vía Sol",en:"Services: NIE, lawyer, mortgage, utilities & interiors | Vía Sol",es:"Servicios: NIE, abogado, hipoteca, suministros e interiorismo | Vía Sol"};
 const WA={pl:"Dzień dobry! Piszę w sprawie usług przy zakupie nieruchomości na Costa Blanca.",en:"Hello! I'm writing about your services for buying a property on the Costa Blanca.",es:"¡Hola! Escribo por vuestros servicios para comprar una propiedad en la Costa Blanca."};
+const BHUB={pl:"blog/pl/",en:"blog/en/",es:"blog/es/"};
 function setLang(l){const d=I18N[l];if(!d)return;document.documentElement.lang=l;document.title=TITLES[l];
  document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(d[k]!==undefined)e.innerHTML=d[k];});
  document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));
- const wa=document.getElementById("waFloat");if(wa&&WA[l])wa.href="https://wa.me/34600000000?text="+encodeURIComponent(WA[l]);}
+ const wa=document.getElementById("waFloat");if(wa&&WA[l])wa.href="https://wa.me/34600000000?text="+encodeURIComponent(WA[l]);
+ const nb=document.getElementById("navBlog"),fb=document.getElementById("footBlog");if(nb)nb.href=BHUB[l];if(fb)fb.href=BHUB[l];}
 document.querySelectorAll("#lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
 
 const hd=document.getElementById("hd"),menuBtn=document.getElementById("menuBtn");
