@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inwestycje na Costa Blanca — apartamenty i wille | Vía Sol</title>
+<meta name="description" content="Nowe osiedla i wille na Costa Blanca (Alicante): Calpe, Finestrat i Villajoyosa. Apartamenty, penthouse'y i wille z basenem. Polskie biuro nieruchomości — pełna obsługa po polsku.">
+<link rel="canonical" href="https://viasol.example/pl/inwestycje/">
+<link rel="alternate" hreflang="pl" href="https://viasol.example/pl/inwestycje/">
+<link rel="alternate" hreflang="en" href="https://viasol.example/en/developments/">
+<link rel="alternate" hreflang="es" href="https://viasol.example/es/promociones/">
+<link rel="alternate" hreflang="x-default" href="https://viasol.example/en/developments/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Inwestycje na Costa Blanca — apartamenty i wille | Vía Sol">
+<meta property="og:description" content="Nowe osiedla i wille na Costa Blanca: Calpe, Finestrat i Villajoyosa. Pełna obsługa po polsku.">
+<meta property="og:image" content="https://www.camporrosso.es/wp-content/uploads/2025/10/1.-Camporrosso-Towers-inicio.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.camporrosso.es">
+<link rel="preconnect" href="https://www.quadratia.com">
+<link rel="preconnect" href="https://www.immosol.com">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sea-deep:#0E3D45;--sea:#1C6E7E;--sea-light:#4FA3B3;--sun:#EE6C2D;--sun-soft:#F7A24B;
+    --chalk:#F7F3EA;--chalk-2:#FCFAF4;--ink:#122A2E;--ink-soft:#3E565B;--sand:#E9DCC6;
+    --line:rgba(18,42,46,.12);--shadow:0 18px 50px -24px rgba(14,61,69,.45);--r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--chalk);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.01em;margin:0}
+  p{margin:0}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--sun)}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.95rem;padding:.8rem 1.4rem;border-radius:999px;cursor:pointer;border:1.5px solid transparent;transition:transform .18s,box-shadow .18s,background .18s}
+  .btn-sun{background:var(--sun);color:#fff;box-shadow:0 12px 26px -12px rgba(238,108,42,.7)}
+  .btn-sun:hover{transform:translateY(-2px)}
+  .btn-ink{background:var(--sea-deep);color:#fff}.btn-ink:hover{transform:translateY(-2px)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+  .brand{display:flex;align-items:center;gap:.6rem;font-family:"Fraunces";font-size:1.35rem;font-weight:600;color:var(--ink)}
+  .brand .mark{width:28px;height:28px}
+  .nav-links{display:flex;gap:24px;font-size:.92rem;font-weight:500}
+  .nav-links a{color:var(--ink-soft)}.nav-links a:hover{color:var(--sun)}
+  .nav-right{display:flex;align-items:center;gap:14px}
+  .lang{display:flex;border:1.5px solid var(--line);border-radius:999px;overflow:hidden;font-size:.78rem;font-weight:600}
+  .lang button{background:transparent;border:0;color:var(--ink-soft);padding:.32rem .6rem;cursor:pointer;font-weight:600}
+  .lang button.on{background:var(--sun);color:#fff}
+
+  .phero{padding:54px 0 22px}
+  .phero h1{font-size:clamp(2rem,4.6vw,3.2rem);margin:.5rem 0 .8rem}
+  .phero .lead{font-size:1.1rem;color:var(--ink-soft);max-width:62ch}
+  .phero .lead b{color:var(--sea-deep)}
+
+  .filters{display:flex;flex-wrap:wrap;gap:10px;padding:8px 0 30px}
+  .chip{font-size:.86rem;font-weight:600;color:var(--ink-soft);background:#fff;border:1.5px solid var(--line);padding:.5rem 1rem;border-radius:999px;cursor:pointer;transition:.15s}
+  .chip:hover{border-color:var(--sun)}
+  .chip.on{background:var(--sea-deep);color:#fff;border-color:var(--sea-deep)}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding-bottom:40px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 10px 30px -22px rgba(14,61,69,.5);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .ph{position:relative;aspect-ratio:3/2;background:var(--sea-light)}
+  .ph img{width:100%;height:100%;object-fit:cover}
+  .badge{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.95);color:var(--sea-deep);font-size:.72rem;font-weight:600;padding:.32rem .7rem;border-radius:999px}
+  .dev{position:absolute;top:14px;right:14px;background:rgba(14,61,69,.85);color:#fff;font-size:.68rem;font-weight:600;letter-spacing:.05em;padding:.3rem .6rem;border-radius:999px}
+  .body{padding:22px;display:flex;flex-direction:column;flex:1}
+  .loc{font-size:.78rem;color:var(--sun);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+  .card h3{font-size:1.2rem;margin:.35rem 0 .4rem}
+  .cdesc{font-size:.9rem;color:var(--ink-soft);flex:1}
+  .price{font-family:"Fraunces";font-size:1.25rem;font-weight:600;color:var(--sea-deep);margin-top:1rem}
+  .price small{font-family:"Inter";font-size:.78rem;font-weight:500;color:var(--ink-soft)}
+  .price.req{font-size:1rem;color:var(--ink-soft);font-family:"Inter";font-weight:600}
+  .askbtn{display:inline-block;margin-top:.8rem;font-weight:600;color:var(--sun);font-size:.92rem}
+  .askbtn:hover{color:var(--sea-deep)}
+
+  .ctaband{background:var(--sea-deep);color:#fff;border-radius:var(--r);padding:40px;text-align:center;margin:20px 0 60px}
+  .ctaband h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.6rem}
+  .ctaband p{color:rgba(255,255,255,.85);max-width:52ch;margin:0 auto 1.4rem}
+
+  footer{background:var(--sea-deep);color:rgba(255,255,255,.7);padding:40px 0;font-size:.88rem}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+  footer a{color:rgba(255,255,255,.75)}footer a:hover{color:var(--sun-soft)}
+
+  .micro{font-size:.78rem;color:var(--ink-soft);font-style:italic;padding-bottom:30px}
+
+  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.nav-links{display:none}}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="via-sol-home.html" class="brand">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#EE6C2D"/><path d="M11 26c4-7 14-7 18 0" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="14" r="4.5" fill="#FFD9A8"/></svg>
+      Vía Sol
+    </a>
+    <nav class="nav-links">
+      <a href="via-sol-home.html#process" data-i18n="nav.process">Proces</a>
+      <a href="via-sol-home.html#zones" data-i18n="nav.zones">Lokalizacje</a>
+      <a href="via-sol-home.html#life" data-i18n="nav.life">Życie tutaj</a>
+      <a href="via-sol-home.html#contact" data-i18n="nav.contact">Kontakt</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" id="lang">
+        <button data-lang="pl" class="on">PL</button><button data-lang="en">EN</button><button data-lang="es">ES</button>
+      </div>
+      <a href="via-sol-home.html#contact" class="btn btn-sun" style="padding:.5rem 1rem;font-size:.85rem" data-i18n="nav.cta">Rozmowa</a>
+    </div>
+  </div>
+</header>
+
+<section class="phero">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="hero.eyebrow">Inwestycje · Costa Blanca, Alicante</span>
+    <h1 data-i18n="hero.h1">Nowe osiedla i wille na Costa Blanca</h1>
+    <p class="lead" data-i18n="hero.sub">Współpracujemy z czołowymi deweloperami regionu — <b>Camporrosso, Quadratia, Immosol, Sonneil i Breezom</b>. Wybierz inwestycję, a my zajmiemy się resztą: od wizyty po klucze, po polsku.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="filters" id="filters">
+    <button class="chip on" data-loc="all" data-i18n="filter.all">Wszystkie</button>
+    <button class="chip" data-loc="calpe">Calpe</button>
+    <button class="chip" data-loc="finestrat">Finestrat</button>
+    <button class="chip" data-loc="villajoyosa">Villajoyosa</button>
+  </div>
+
+  <div class="grid" id="grid">
+
+    <!-- 1 Camporrosso Towers -->
+    <article class="card" data-loc="calpe">
+      <div class="ph"><span class="badge" data-i18n="p1.b">Apartamenty · nowa inwestycja</span><span class="dev">Camporrosso</span>
+        <img src="https://www.camporrosso.es/wp-content/uploads/2025/10/1.-Camporrosso-Towers-inicio.jpg" alt="Camporrosso Towers, Calpe" width="700" height="466" loading="lazy" decoding="async" fetchpriority="high"></div>
+      <div class="body">
+        <div class="loc">Calpe · Costa Blanca</div>
+        <h3>Camporrosso Towers</h3>
+        <p class="cdesc" data-i18n="p1.d">Apartamenty z tarasami u stóp skały Peñón de Ifach, z widokiem na morze, lagunę i góry.</p>
+        <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
+        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+      </div>
+    </article>
+
+    <!-- 2 Camporrosso Sierra Cortina -->
+    <article class="card" data-loc="finestrat">
+      <div class="ph"><span class="badge" data-i18n="p2.b">Wille i apartamenty</span><span class="dev">Camporrosso</span>
+        <img src="https://www.camporrosso.es/wp-content/uploads/2025/11/1-camporrosso-sierra-cortina.jpg" alt="Camporrosso Sierra Cortina, Finestrat" width="700" height="466" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="loc">Finestrat · Costa Blanca</div>
+        <h3>Camporrosso Sierra Cortina</h3>
+        <p class="cdesc" data-i18n="p2.d">Ekskluzywne osiedle z widokiem na panoramę Benidorm i górę Puig Campana, kilka minut od wszystkiego.</p>
+        <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
+        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+      </div>
+    </article>
+
+    <!-- 3 Camporrosso Golden Leaves -->
+    <article class="card" data-loc="calpe">
+      <div class="ph"><span class="badge" data-i18n="p3.b">Basen · padel · siłownia</span><span class="dev">Camporrosso</span>
+        <img src="https://www.camporrosso.es/wp-content/uploads/2022/10/2.jpg" alt="Camporrosso Golden Leaves, Calpe" width="700" height="466" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="loc">Calpe · Costa Blanca</div>
+        <h3>Camporrosso Golden Leaves</h3>
+        <p class="cdesc" data-i18n="p3.d">Apartamenty z wielkimi tarasami i panoramą plaż Calpe oraz Peñón de Ifach.</p>
+        <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
+        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+      </div>
+    </article>
+
+    <!-- 4 Camporrosso Serpentine -->
+    <article class="card" data-loc="finestrat">
+      <div class="ph"><span class="badge" data-i18n="p4.b">Frontem do morza</span><span class="dev">Camporrosso</span>
+        <img src="https://www.camporrosso.es/wp-content/uploads/2024/12/1.1-camporrosso-serpentine.jpg" alt="Camporrosso Serpentine, Finestrat" width="700" height="466" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="loc">Finestrat · Costa Blanca</div>
+        <h3>Camporrosso Serpentine</h3>
+        <p class="cdesc" data-i18n="p4.d">Nowy village z rozległymi ogrodami, ścieżkami rowerowymi i wszystkimi domami zwróconymi ku morzu.</p>
+        <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
+        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+      </div>
+    </article>
+
+    <!-- 5 Camporrosso Siete Joyas -->
+    <article class="card" data-loc="finestrat">
+      <div class="ph"><span class="badge" data-i18n="p5.b">7 willi premium</span><span class="dev">Camporrosso</span>
+        <img src="https://www.camporrosso.es/wp-content/uploads/2021/07/dor-4.jpg" alt="Siete Joyas by Camporrosso, Finestrat" width="700" height="466" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="loc">Finestrat · Costa Blanca</div>
+        <h3>Siete Joyas by Camporrosso</h3>
+        <p class="cdesc" data-i18n="p5.d">Siedem unikatowych willi, każda inna, wszystkie zwrócone ku morzu i na południe.</p>
+        <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
+        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+      </div>
+    </article>
+
+    <!-- 6 Allonbay Aster -->
+    <article class="card" data-loc="villajoyosa">
+      <div class="ph"><span class="badge" data-i18n="p6.b">100 m od morza</span><span class="dev">Quadratia</span>
+        <img src="https://www.quadratia.com/wp-content/uploads/allonbay_aster_ARCHIMIA_M8_ASTER_IE04_JARDIN_MIRANDO_A_PROMOCION_ATARDECER_LQ-e1690903084141.webp" alt="Allonbay Aster, Villajoyosa" width="700" height="466" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="loc">Villajoyosa · Costa Blanca</div>
+        <h3>Allonbay Aster</h3>
+        <p class="cdesc" data-i18n="p6.d">Domy, apartamenty i penthouse'y 1–3 sypialnie z basenami, spa i siłownią, 100 m od plaży.</p>
+        <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
+        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+      </div>
+    </article>
+
+    <!-- 7 Las Villas Immosol -->
+    <article class="card" data-loc="finestrat">
+      <div class="ph"><span class="badge" data-i18n="p7.b">Wille · basen prywatny</span><span class="dev">Immosol</span>
+        <img src="https://www.immosol.com/wp-content/uploads/2025/01/las-villas-3.jpg" alt="Las Villas Balcón de Finestrat, Immosol" width="700" height="466" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="loc">Finestrat · Costa Blanca</div>
+        <h3>Las Villas Balcón de Finestrat</h3>
+        <p class="cdesc" data-i18n="p7.d">7 niezależnych willi parterowych z prywatnym basenem 36 m² i klasą energetyczną A.</p>
+        <div class="price"><small data-i18n="card.from">od</small> 725 900 €</div>
+        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+      </div>
+    </article>
+
+    <!-- 8 Alonis Living Breezom -->
+    <article class="card" data-loc="villajoyosa">
+      <div class="ph"><span class="badge" data-i18n="p8.b">Apartamenty i penthouse'y</span><span class="dev">Breezom</span>
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=700&q=70" alt="Alonis Living, Villajoyosa" width="700" height="466" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="loc">Villajoyosa · Costa Blanca</div>
+        <h3>Alonis Living</h3>
+        <p class="cdesc" data-i18n="p8.d">164 apartamenty i penthouse'y 1–3 sypialnie z tarasami, 5 minut spacerem od Playa del Torres.</p>
+        <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
+        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+      </div>
+    </article>
+
+    <!-- 9 Salisol Golf Villas Sonneil -->
+    <article class="card" data-loc="finestrat">
+      <div class="ph"><span class="badge" data-i18n="p9.b">Wille z basenem</span><span class="dev">Sonneil</span>
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=700&q=70" alt="Salisol Golf Villas, Finestrat" width="700" height="466" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="loc">Finestrat · Costa Blanca</div>
+        <h3>Salisol Golf Villas</h3>
+        <p class="cdesc" data-i18n="p9.d">Nowoczesne wille z basenem, widokiem na morze i sierrę, przy polu golfowym.</p>
+        <div class="price"><small data-i18n="card.from">od</small> 495 000 €</div>
+        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+      </div>
+    </article>
+
+    <!-- 10 Marqués Golf Resort Sonneil -->
+    <article class="card" data-loc="finestrat">
+      <div class="ph"><span class="badge" data-i18n="p10.b">Apartamenty · golf</span><span class="dev">Sonneil</span>
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=70" alt="Marqués Golf Resort, Finestrat" width="700" height="466" loading="lazy" decoding="async"></div>
+      <div class="body">
+        <div class="loc">Finestrat · Costa Blanca</div>
+        <h3>Marqués Golf Resort</h3>
+        <p class="cdesc" data-i18n="p10.d">Apartamenty z panoramicznym widokiem w resorcie golfowym Finestrat–Benidorm.</p>
+        <div class="price"><small data-i18n="card.from">od</small> 269 900 €</div>
+        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="micro" id="empty" style="display:none" data-i18n="empty">Brak inwestycji w tej lokalizacji.</p>
+
+  <div class="ctaband">
+    <h2 data-i18n="cta.h">Nie wiesz, którą wybrać?</h2>
+    <p data-i18n="cta.p">Powiedz nam, czego szukasz i jaki masz budżet. Przygotujemy dopasowaną listę i pokażemy wszystko na miejscu — po polsku.</p>
+    <a href="via-sol-home.html#contact" class="btn btn-sun" data-i18n="cta.btn">Umów bezpłatną rozmowę</a>
+  </div>
+
+  <p class="micro" data-i18n="disclaimer">Materiały i wizualizacje pochodzą od deweloperów i mają charakter poglądowy. Ceny orientacyjne, niewiążące; pełne ceny, plany i dostępność potwierdzamy po kontakcie.</p>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div style="display:flex;align-items:center;gap:.6rem;color:#fff;font-family:'Fraunces';font-size:1.2rem">
+      <svg width="24" height="24" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#EE6C2D"/><path d="M11 26c4-7 14-7 18 0" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="14" r="4.5" fill="#FFD9A8"/></svg>
+      Vía Sol
+    </div>
+    <div>© 2026 Vía Sol — <span data-i18n="foot.rights">prototyp</span> · <a href="via-sol-home.html" data-i18n="foot.home">Strona główna</a></div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"RealEstateAgent",
+  "name":"Vía Sol",
+  "areaServed":"Costa Blanca, Alicante, Spain",
+  "knowsLanguage":["pl","en","es"],
+  "makesOffer":[
+    {"@type":"Offer","itemOffered":{"@type":"ApartmentComplex","name":"Camporrosso Towers","address":"Calpe, Alicante"}},
+    {"@type":"Offer","itemOffered":{"@type":"ApartmentComplex","name":"Camporrosso Sierra Cortina","address":"Finestrat, Alicante"}},
+    {"@type":"Offer","itemOffered":{"@type":"ApartmentComplex","name":"Camporrosso Golden Leaves","address":"Calpe, Alicante"}},
+    {"@type":"Offer","itemOffered":{"@type":"ApartmentComplex","name":"Camporrosso Serpentine","address":"Finestrat, Alicante"}},
+    {"@type":"Offer","itemOffered":{"@type":"SingleFamilyResidence","name":"Siete Joyas by Camporrosso","address":"Finestrat, Alicante"}},
+    {"@type":"Offer","itemOffered":{"@type":"ApartmentComplex","name":"Allonbay Aster","address":"Villajoyosa, Alicante"}},
+    {"@type":"Offer","priceCurrency":"EUR","price":"725900","itemOffered":{"@type":"SingleFamilyResidence","name":"Las Villas Balcón de Finestrat","address":"Finestrat, Alicante"}},
+    {"@type":"Offer","itemOffered":{"@type":"ApartmentComplex","name":"Alonis Living","address":"Villajoyosa, Alicante"}},
+    {"@type":"Offer","priceCurrency":"EUR","price":"495000","itemOffered":{"@type":"SingleFamilyResidence","name":"Salisol Golf Villas","address":"Finestrat, Alicante"}},
+    {"@type":"Offer","priceCurrency":"EUR","price":"269900","itemOffered":{"@type":"ApartmentComplex","name":"Marqués Golf Resort","address":"Finestrat, Alicante"}}
+  ]
+}
+</script>
+
+<script>
+const I18N={
+ pl:{"nav.process":"Proces","nav.zones":"Lokalizacje","nav.life":"Życie tutaj","nav.contact":"Kontakt","nav.cta":"Rozmowa",
+  "hero.eyebrow":"Inwestycje · Costa Blanca, Alicante","hero.h1":"Nowe osiedla i wille na Costa Blanca",
+  "hero.sub":"Współpracujemy z czołowymi deweloperami regionu — <b>Camporrosso, Quadratia, Immosol, Sonneil i Breezom</b>. Wybierz inwestycję, a my zajmiemy się resztą: od wizyty po klucze, po polsku.",
+  "filter.all":"Wszystkie","card.from":"od","card.onreq":"Cena na zapytanie","card.ask":"Zapytaj o cenę →","empty":"Brak inwestycji w tej lokalizacji.",
+  "p1.b":"Apartamenty · nowa inwestycja","p1.d":"Apartamenty z tarasami u stóp skały Peñón de Ifach, z widokiem na morze, lagunę i góry.",
+  "p2.b":"Wille i apartamenty","p2.d":"Ekskluzywne osiedle z widokiem na panoramę Benidorm i górę Puig Campana, kilka minut od wszystkiego.",
+  "p3.b":"Basen · padel · siłownia","p3.d":"Apartamenty z wielkimi tarasami i panoramą plaż Calpe oraz Peñón de Ifach.",
+  "p4.b":"Frontem do morza","p4.d":"Nowy village z rozległymi ogrodami, ścieżkami rowerowymi i wszystkimi domami zwróconymi ku morzu.",
+  "p5.b":"7 willi premium","p5.d":"Siedem unikatowych willi, każda inna, wszystkie zwrócone ku morzu i na południe.",
+  "p6.b":"100 m od morza","p6.d":"Domy, apartamenty i penthouse'y 1–3 sypialnie z basenami, spa i siłownią, 100 m od plaży.",
+  "p7.b":"Wille · basen prywatny","p7.d":"7 niezależnych willi parterowych z prywatnym basenem 36 m² i klasą energetyczną A.",
+  "p8.b":"Apartamenty i penthouse'y","p8.d":"164 apartamenty i penthouse'y 1–3 sypialnie z tarasami, 5 minut spacerem od Playa del Torres.",
+  "p9.b":"Wille z basenem","p9.d":"Nowoczesne wille z basenem, widokiem na morze i sierrę, przy polu golfowym.",
+  "p10.b":"Apartamenty · golf","p10.d":"Apartamenty z panoramicznym widokiem w resorcie golfowym Finestrat–Benidorm.",
+  "cta.h":"Nie wiesz, którą wybrać?","cta.p":"Powiedz nam, czego szukasz i jaki masz budżet. Przygotujemy dopasowaną listę i pokażemy wszystko na miejscu — po polsku.","cta.btn":"Umów bezpłatną rozmowę",
+  "disclaimer":"Materiały i wizualizacje pochodzą od deweloperów i mają charakter poglądowy. Ceny orientacyjne, niewiążące; pełne ceny, plany i dostępność potwierdzamy po kontakcie.",
+  "foot.rights":"prototyp","foot.home":"Strona główna"},
+ en:{"nav.process":"Process","nav.zones":"Locations","nav.life":"Life here","nav.contact":"Contact","nav.cta":"Talk to us",
+  "hero.eyebrow":"Developments · Costa Blanca, Alicante","hero.h1":"New developments and villas on the Costa Blanca",
+  "hero.sub":"We work with the region's leading developers — <b>Camporrosso, Quadratia, Immosol, Sonneil and Breezom</b>. Pick a development and we handle the rest: from the visit to the keys, in your language.",
+  "filter.all":"All","card.from":"from","card.onreq":"Price on request","card.ask":"Ask for the price →","empty":"No developments in this location.",
+  "p1.b":"Apartments · new build","p1.d":"Apartments with terraces at the foot of the Peñón de Ifach, with views of the sea, lagoon and mountains.",
+  "p2.b":"Villas & apartments","p2.d":"Exclusive community overlooking the Benidorm skyline and the Puig Campana, minutes from everything.",
+  "p3.b":"Pool · padel · gym","p3.d":"Apartments with huge terraces and panoramic views of Calpe's beaches and the Peñón de Ifach.",
+  "p4.b":"Facing the sea","p4.d":"A new village with sweeping gardens, cycle paths and every home facing the sea.",
+  "p5.b":"7 premium villas","p5.d":"Seven bespoke villas, each one different, all facing the sea and due south.",
+  "p6.b":"100 m from the sea","p6.d":"Town houses, apartments and penthouses with 1–3 bedrooms, pools, spa and gym, 100 m from the beach.",
+  "p7.b":"Villas · private pool","p7.d":"7 detached single-storey villas with a private 36 m² pool and class A energy rating.",
+  "p8.b":"Apartments & penthouses","p8.d":"164 apartments and penthouses with 1–3 bedrooms and terraces, a 5-minute walk from Playa del Torres.",
+  "p9.b":"Villas with pool","p9.d":"Modern villas with a pool and views of the sea and the sierra, beside the golf course.",
+  "p10.b":"Apartments · golf","p10.d":"Apartments with panoramic views in the Finestrat–Benidorm golf resort.",
+  "cta.h":"Not sure which one?","cta.p":"Tell us what you're after and your budget. We'll prepare a tailored shortlist and show you everything on the ground — in your language.","cta.btn":"Book a free call",
+  "disclaimer":"Materials and renders are provided by the developers and are for illustration only. Prices are indicative and non-binding; full prices, plans and availability are confirmed on request.",
+  "foot.rights":"prototype","foot.home":"Home"},
+ es:{"nav.process":"Proceso","nav.zones":"Zonas","nav.life":"La vida aquí","nav.contact":"Contacto","nav.cta":"Hablemos",
+  "hero.eyebrow":"Promociones · Costa Blanca, Alicante","hero.h1":"Nuevas promociones y villas en la Costa Blanca",
+  "hero.sub":"Trabajamos con los principales promotores de la zona — <b>Camporrosso, Quadratia, Immosol, Sonneil y Breezom</b>. Elige una promoción y nosotros nos ocupamos del resto: de la visita a las llaves, en tu idioma.",
+  "filter.all":"Todas","card.from":"desde","card.onreq":"Precio a consultar","card.ask":"Consultar precio →","empty":"No hay promociones en esta zona.",
+  "p1.b":"Apartamentos · obra nueva","p1.d":"Apartamentos con terrazas a los pies del Peñón de Ifach, con vistas al mar, la laguna y las montañas.",
+  "p2.b":"Villas y apartamentos","p2.d":"Promoción exclusiva con vistas al skyline de Benidorm y al Puig Campana, a minutos de todo.",
+  "p3.b":"Piscina · pádel · gimnasio","p3.d":"Apartamentos con grandes terrazas y vistas panorámicas a las playas de Calpe y al Peñón de Ifach.",
+  "p4.b":"Frente al mar","p4.d":"Un nuevo village con amplios jardines, carriles bici y todas las viviendas mirando al mar.",
+  "p5.b":"7 villas premium","p5.d":"Siete villas únicas, todas distintas, orientadas al mar y al sur.",
+  "p6.b":"A 100 m del mar","p6.d":"Town houses, apartamentos y áticos de 1–3 dormitorios con piscinas, spa y gimnasio, a 100 m de la playa.",
+  "p7.b":"Villas · piscina privada","p7.d":"7 villas independientes de una planta con piscina privada de 36 m² y certificación energética A.",
+  "p8.b":"Apartamentos y áticos","p8.d":"164 apartamentos y áticos de 1–3 dormitorios con terrazas, a 5 minutos a pie de la Playa del Torres.",
+  "p9.b":"Villas con piscina","p9.d":"Villas modernas con piscina y vistas al mar y a la sierra, junto al campo de golf.",
+  "p10.b":"Apartamentos · golf","p10.d":"Apartamentos con vistas panorámicas en el resort de golf Finestrat–Benidorm.",
+  "cta.h":"¿No sabes cuál elegir?","cta.p":"Dinos qué buscas y tu presupuesto. Prepararemos una selección a medida y te lo enseñaremos todo sobre el terreno, en tu idioma.","cta.btn":"Reserva una llamada gratis",
+  "disclaimer":"Los materiales y renders proceden de los promotores y son orientativos. Precios indicativos y no vinculantes; precios completos, planos y disponibilidad se confirman al contactar.",
+  "foot.rights":"prototipo","foot.home":"Inicio"}
+};
+const TITLES={pl:"Inwestycje na Costa Blanca — apartamenty i wille | Vía Sol",en:"Developments on the Costa Blanca — apartments and villas | Vía Sol",es:"Promociones en la Costa Blanca — apartamentos y villas | Vía Sol"};
+function setLang(l){const d=I18N[l];if(!d)return;document.documentElement.lang=l;document.title=TITLES[l];
+ document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(d[k]!==undefined)e.innerHTML=d[k];});
+ document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+document.querySelectorAll("#lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+
+const cards=[...document.querySelectorAll("#grid .card")];
+document.querySelectorAll("#filters .chip").forEach(c=>c.addEventListener("click",()=>{
+ document.querySelectorAll("#filters .chip").forEach(x=>x.classList.remove("on"));c.classList.add("on");
+ const loc=c.dataset.loc;let shown=0;
+ cards.forEach(card=>{const m=loc==="all"||card.dataset.loc===loc;card.style.display=m?"":"none";if(m)shown++;});
+ document.getElementById("empty").style.display=shown?"none":"block";
+}));
+</script>
+</body>
+</html>
