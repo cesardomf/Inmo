@@ -90,12 +90,16 @@
   .micro{font-size:.78rem;color:var(--ink-soft);font-style:italic;padding-bottom:30px}
 
   .menu-btn{display:none;background:none;border:0;cursor:pointer;color:var(--ink)}
+  .nav-toggle{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+  .menu-btn .i-close{display:none}
+  .nav-toggle:checked ~ .nav-right .menu-btn .i-open{display:none}
+  .nav-toggle:checked ~ .nav-right .menu-btn .i-close{display:block}
   @media(max-width:900px){
     .grid{grid-template-columns:1fr 1fr}
     .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:2px;display:none;background:var(--chalk-2);padding:12px 24px 18px;border-top:1px solid var(--line);box-shadow:0 24px 40px -22px rgba(14,61,69,.5)}
-    header.open .nav-links{display:flex}
+    .nav-toggle:checked ~ .nav-links{display:flex}
     .nav-links a{padding:.7rem 0;border-bottom:1px solid var(--line)}
-    .menu-btn{display:block}
+    .menu-btn{display:flex;align-items:center}
     .nav-cta{display:none}
   }
   @media(max-width:600px){.grid{grid-template-columns:1fr}.wa-float .wa-tx{display:none}.wa-float{padding:.85rem;right:14px;bottom:14px}}
@@ -114,6 +118,7 @@
 
 <header>
   <div class="wrap nav">
+    <input type="checkbox" id="navtoggle" class="nav-toggle" aria-hidden="true">
     <a href="index.html" class="brand">
       <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#EE6C2D"/><path d="M11 26c4-7 14-7 18 0" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="14" r="4.5" fill="#FFD9A8"/></svg>
       Vía Sol
@@ -130,7 +135,10 @@
         <button data-lang="pl" class="on">PL</button><button data-lang="en">EN</button><button data-lang="es">ES</button>
       </div>
       <a href="index.html#contact" class="btn btn-sun nav-cta" style="padding:.5rem 1rem;font-size:.85rem" data-i18n="nav.cta">Rozmowa</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <label for="navtoggle" class="menu-btn" id="menuBtn" role="button" tabindex="0" aria-label="Menu">
+        <svg class="i-open" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="i-close" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </label>
     </div>
   </div>
 </header>

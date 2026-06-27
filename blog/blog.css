@@ -30,6 +30,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.92);backdro
 .lang a{background:transparent;color:var(--ink-soft);padding:.34rem .6rem;font-weight:600;line-height:1}
 .lang a.on{background:var(--sun);color:#fff}
 .menu-btn{display:none;background:none;border:0;cursor:pointer;color:var(--ink)}
+.nav-toggle{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.menu-btn .i-close{display:none}
+.nav-toggle:checked ~ .nav-right .menu-btn .i-open{display:none}
+.nav-toggle:checked ~ .nav-right .menu-btn .i-close{display:block}
 
 /* breadcrumb */
 .crumb{font-size:.82rem;color:var(--ink-soft);padding:22px 0 0}
@@ -143,9 +147,9 @@ footer a{display:block;color:rgba(255,255,255,.72);padding:.22rem 0}footer a:hov
 
 @media(max-width:900px){
   .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:2px;display:none;background:var(--chalk-2);padding:12px 24px 18px;border-top:1px solid var(--line);box-shadow:0 24px 40px -22px rgba(14,61,69,.5)}
-  header.open .nav-links{display:flex}
+  .nav-toggle:checked ~ .nav-links{display:flex}
   .nav-links a{padding:.7rem 0;border-bottom:1px solid var(--line)}
-  .menu-btn{display:block}.nav-cta{display:none}
+  .menu-btn{display:flex;align-items:center}.nav-cta{display:none}
   .posts,.rgrid{grid-template-columns:1fr 1fr}
   .feat{grid-template-columns:1fr}.feat .ph{min-height:200px}
   .foot-grid{grid-template-columns:1fr 1fr}
