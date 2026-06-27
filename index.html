@@ -15,6 +15,7 @@
 <meta property="og:description" content="Twój nowy dom w słońcu Hiszpanii. Pełna obsługa po polsku, krok po kroku.">
 <meta property="og:image" content="https://www.camporrosso.es/wp-content/uploads/2025/11/1-camporrosso-sierra-cortina.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23EE6C2D'/%3E%3Cpath d='M11 26c4-7 14-7 18 0' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='20' cy='14' r='4.5' fill='%23FFD9A8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://www.camporrosso.es">
@@ -255,10 +256,16 @@
     .road::before{display:none}
   }
   @media(max-width:680px){
-    .nav-links{display:none}
+    .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:2px;display:none;
+      background:var(--chalk-2);padding:12px 24px 20px;border-top:1px solid var(--line);
+      box-shadow:0 24px 40px -22px rgba(14,61,69,.5)}
+    header.open .nav-links{display:flex}
+    header.open{background:rgba(247,243,234,.98);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+    .nav-links a{color:var(--ink-soft)!important;padding:.7rem 0;border-bottom:1px solid var(--line);font-size:1rem}
     .menu-btn{display:block;color:#fff}
-    header.scrolled .menu-btn{color:var(--ink)}
-    .grid3,.tgrid,.life-grid,.zones-grid,.road{grid-template-columns:1fr}
+    header.scrolled .menu-btn,header.open .menu-btn{color:var(--ink)}
+    .nav-cta{display:none}
+    .grid3,.tgrid,.life-grid,.zones-grid,.road,.svc-grid{grid-template-columns:1fr}
     section.block{padding:70px 0}
     .hero-stats{gap:22px}
     .hstat{flex:1 1 40%}
@@ -267,6 +274,27 @@
     *{animation:none!important;transition:none!important}
     .reveal{opacity:1;transform:none}
   }
+
+  /* services teaser */
+  .svc-teaser{background:linear-gradient(180deg,var(--chalk-2),var(--chalk))}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;transition:transform .2s,box-shadow .2s}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .svc .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(28,110,126,.1);color:var(--sea);margin-bottom:14px}
+  .svc h3{font-size:1.06rem;margin-bottom:.3rem}
+  .svc p{font-size:.88rem;color:var(--ink-soft)}
+  @media(max-width:960px){.svc-grid{grid-template-columns:1fr 1fr}}
+
+  /* floating whatsapp */
+  .wa-float{position:fixed;right:18px;bottom:18px;z-index:80;display:inline-flex;align-items:center;gap:.55rem;
+    background:#25D366;color:#fff;font-weight:600;font-size:.92rem;padding:.7rem .95rem;border-radius:999px;
+    box-shadow:0 14px 30px -10px rgba(37,211,102,.6);transition:transform .18s,box-shadow .18s}
+  .wa-float:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(37,211,102,.75)}
+  .wa-float svg,.wa-float .wa-tx{position:relative;z-index:2}
+  .wa-float .wa-tx{white-space:nowrap}
+  .wa-pulse{position:absolute;inset:0;border-radius:999px;animation:wapulse 2.6s infinite;z-index:1}
+  @keyframes wapulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+  @media(max-width:680px){.wa-float .wa-tx{display:none}.wa-float{padding:.85rem;right:14px;bottom:14px}}
 </style>
 </head>
 <body>
@@ -277,11 +305,12 @@
       <svg class="mark" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" fill="#EE6C2D"/><path d="M11 26c4-7 14-7 18 0" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="14" r="4.5" fill="#FFD9A8"/></svg>
       Vía Sol
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" id="navlinks">
       <a href="#process" data-i18n="nav.process">Proces</a>
-      <a href="#zones" data-i18n="nav.zones">Lokalizacje</a>
-      <a href="#properties" data-i18n="nav.properties">Oferty</a>
+      <a href="promociones.html" data-i18n="nav.properties">Oferty</a>
+      <a href="servicios.html" data-i18n="nav.services">Usługi</a>
       <a href="#life" data-i18n="nav.life">Życie tutaj</a>
+      <a href="blog/index.html" data-i18n="nav.blog">Poradnik</a>
       <a href="#contact" data-i18n="nav.contact">Kontakt</a>
     </nav>
     <div class="nav-right">
@@ -290,7 +319,10 @@
         <button data-lang="en">EN</button>
         <button data-lang="es">ES</button>
       </div>
-      <a href="#contact" class="btn btn-sun" data-i18n="nav.cta" style="padding:.55rem 1.1rem;font-size:.85rem">Rozmowa</a>
+      <a href="#contact" class="btn btn-sun nav-cta" data-i18n="nav.cta" style="padding:.55rem 1.1rem;font-size:.85rem">Rozmowa</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
     </div>
   </div>
 </header>
@@ -360,6 +392,26 @@
       <div class="stop reveal"><div class="dot">04</div><h3 data-i18n="proc.s4t">Formalności</h3><p data-i18n="proc.s4d">NIE, konto w banku, hipoteka, niezależny prawnik, notariusz — ogarniamy to razem.</p></div>
       <div class="stop reveal"><div class="dot">05</div><h3 data-i18n="proc.s5t">Klucze i opieka</h3><p data-i18n="proc.s5d">Odbiór kluczy, przepisanie mediów i wsparcie, gdy jesteś już u siebie.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- SERVICES TEASER -->
+<section class="block svc-teaser" id="services">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="eyebrow" data-i18n="svc.eyebrow">Pełna obsługa, jeden zespół</span>
+      <h2 class="big" data-i18n="svc.h2">Zajmujemy się wszystkim</h2>
+      <p class="lead" data-i18n="svc.sub">Od numeru NIE po meble w salonie. Ty wybierasz dom — resztą zajmujemy się my.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div><h3 data-i18n="svc.1t">NIE i formalności</h3><p data-i18n="svc.1d">Numer NIE, rejestracja obywatela UE i wszystkie urzędy — załatwiamy to za Ciebie.</p></div>
+      <div class="svc reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 6v5c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3 data-i18n="svc.2t">Prawnik i notariusz</h3><p data-i18n="svc.2d">Niezależny prawnik sprawdza każdy dokument. Bezpieczna transakcja u notariusza.</p></div>
+      <div class="svc reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 10v4M18 10v4"/></svg></div><h3 data-i18n="svc.3t">Hipoteka i bank</h3><p data-i18n="svc.3d">Konto w hiszpańskim banku i kredyt hipoteczny dla nierezydentów na najlepszych warunkach.</p></div>
+      <div class="svc reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div><h3 data-i18n="svc.4t">Media i ubezpieczenie</h3><p data-i18n="svc.4d">Prąd, woda, internet i ubezpieczenie domu — podłączone i przepisane na Ciebie.</p></div>
+      <div class="svc reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V10l9-7 9 7v11h-6v-7H9v7Z"/></svg></div><h3 data-i18n="svc.5t">Wnętrza i meble</h3><p data-i18n="svc.5d">Projekt wnętrz, remont i pakiety mebli. Wejdziesz do gotowego, urządzonego domu.</p></div>
+      <div class="svc reveal"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><h3 data-i18n="svc.6t">Opieka po zakupie</h3><p data-i18n="svc.6d">Zarządzanie i opieka nad nieruchomością, gdy Ty jesteś w Polsce.</p></div>
+    </div>
+    <div class="center" style="margin-top:38px"><a href="servicios.html" class="btn btn-ink" data-i18n="svc.cta">Zobacz wszystkie usługi</a></div>
   </div>
 </section>
 
@@ -539,6 +591,13 @@
   </div>
 </section>
 
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" id="waFloat" href="https://wa.me/34600000000?text=Dzie%C5%84%20dobry!%20Pisz%C4%99%20w%20sprawie%20nieruchomo%C5%9Bci%20na%20Costa%20Blanca." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <span class="wa-pulse" aria-hidden="true"></span>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+  <span class="wa-tx" data-i18n="wa.float">Napisz po polsku</span>
+</a>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -551,9 +610,10 @@
       </div>
       <div>
         <h4 data-i18n="foot.explore">Nawigacja</h4>
+        <a href="promociones.html" data-i18n="nav.properties">Oferty</a>
+        <a href="servicios.html" data-i18n="nav.services">Usługi</a>
+        <a href="blog/index.html" data-i18n="nav.blog">Poradnik</a>
         <a href="#process" data-i18n="nav.process">Proces</a>
-        <a href="#zones" data-i18n="nav.zones">Lokalizacje</a>
-        <a href="#properties" data-i18n="nav.properties">Oferty</a>
         <a href="#life" data-i18n="nav.life">Życie tutaj</a>
       </div>
       <div>
@@ -579,7 +639,7 @@
 <script>
 const I18N = {
   pl:{
-    "nav.process":"Proces","nav.zones":"Lokalizacje","nav.properties":"Oferty","nav.life":"Życie tutaj","nav.contact":"Kontakt","nav.cta":"Rozmowa",
+    "nav.process":"Proces","nav.zones":"Lokalizacje","nav.properties":"Oferty","nav.life":"Życie tutaj","nav.contact":"Kontakt","nav.cta":"Rozmowa","nav.services":"Usługi","nav.blog":"Poradnik","wa.float":"Napisz po polsku",
     "hero.eyebrow":"Polskie biuro nieruchomości · Costa Blanca, Alicante",
     "hero.h1":"Twój nowy dom czeka w <em>słońcu</em> Hiszpanii.",
     "hero.sub":"Prowadzimy Cię przez cały proces — po polsku, krok po kroku. Od pierwszej rozmowy aż po klucze w dłoni.",
@@ -610,6 +670,7 @@ const I18N = {
     "life.2t":"Morze i plaże","life.2d":"Kilometry plaż z błękitną flagą, kameralne zatoczki i ciepłe Morze Śródziemne.",
     "life.3t":"Kuchnia i wino","life.3d":"Paella, świeże ryby, lokalne targi i wino. Śródziemnomorski styl życia każdego dnia.",
     "life.4t":"Bezpieczeństwo","life.4d":"Spokojne miasteczka i jeden z najbezpieczniejszych regionów w Europie dla rodzin.",
+    "svc.eyebrow":"Pełna obsługa, jeden zespół","svc.h2":"Zajmujemy się wszystkim","svc.sub":"Od numeru NIE po meble w salonie. Ty wybierasz dom — resztą zajmujemy się my.","svc.1t":"NIE i formalności","svc.1d":"Numer NIE, rejestracja obywatela UE i wszystkie urzędy — załatwiamy to za Ciebie.","svc.2t":"Prawnik i notariusz","svc.2d":"Niezależny prawnik sprawdza każdy dokument. Bezpieczna transakcja u notariusza.","svc.3t":"Hipoteka i bank","svc.3d":"Konto w hiszpańskim banku i kredyt hipoteczny dla nierezydentów na najlepszych warunkach.","svc.4t":"Media i ubezpieczenie","svc.4d":"Prąd, woda, internet i ubezpieczenie domu — podłączone i przepisane na Ciebie.","svc.5t":"Wnętrza i meble","svc.5d":"Projekt wnętrz, remont i pakiety mebli. Wejdziesz do gotowego, urządzonego domu.","svc.6t":"Opieka po zakupie","svc.6d":"Zarządzanie i opieka nad nieruchomością, gdy Ty jesteś w Polsce.","svc.cta":"Zobacz wszystkie usługi",
     "cost.eyebrow":"Bez niespodzianek","cost.h2":"Pełna przejrzystość kosztów",
     "cost.body":"Cena to nie wszystko. Zanim cokolwiek podpiszesz, pokazujemy Ci realny koszt całkowity — podatki, notariusza, rejestr i prawnika. Wiesz dokładnie, ile zapłacisz. Zawsze.","cost.cta":"Oblicz swój koszt",
     "cost.r1":"Cena nieruchomości","cost.r2":"Podatek (ITP lub VAT)","cost.r3":"Notariusz i rejestr","cost.r4":"Niezależny prawnik","cost.total":"Koszt całkowity, szacunkowo",
@@ -630,7 +691,7 @@ const I18N = {
     "foot.explore":"Nawigacja","foot.contact":"Kontakt","foot.lang":"Język","foot.rights":"prototyp","foot.legal":"Polityka prywatności · Cookies · Nota prawna"
   },
   en:{
-    "nav.process":"Process","nav.zones":"Locations","nav.properties":"Homes","nav.life":"Life here","nav.contact":"Contact","nav.cta":"Talk to us",
+    "nav.process":"Process","nav.zones":"Locations","nav.properties":"Homes","nav.life":"Life here","nav.contact":"Contact","nav.cta":"Talk to us","nav.services":"Services","nav.blog":"Guide","wa.float":"Chat on WhatsApp",
     "hero.eyebrow":"Polish-speaking estate agency · Costa Blanca, Alicante",
     "hero.h1":"Your new home is waiting in the Spanish <em>sun</em>.",
     "hero.sub":"We guide you through the whole journey — in your language, step by step. From the first call to the keys in your hand.",
@@ -661,6 +722,7 @@ const I18N = {
     "life.2t":"Sea & beaches","life.2d":"Miles of Blue Flag beaches, quiet coves and the warm Mediterranean.",
     "life.3t":"Food & wine","life.3d":"Paella, fresh fish, local markets and wine. The Mediterranean way of life, every day.",
     "life.4t":"Safety","life.4d":"Calm towns and one of the safest regions in Europe for families.",
+    "svc.eyebrow":"One team, the whole journey","svc.h2":"We handle everything","svc.sub":"From the NIE number to the sofa in your living room. You choose the home — we take care of the rest.","svc.1t":"NIE & paperwork","svc.1d":"NIE number, EU-citizen registration and every government office — handled for you.","svc.2t":"Lawyer & notary","svc.2d":"An independent lawyer checks every document. A safe signing at the notary.","svc.3t":"Mortgage & bank","svc.3d":"A Spanish bank account and a non-resident mortgage on the best possible terms.","svc.4t":"Utilities & insurance","svc.4d":"Electricity, water, internet and home insurance — connected and put in your name.","svc.5t":"Interiors & furniture","svc.5d":"Interior design, renovation and furniture packs. Walk into a finished, furnished home.","svc.6t":"Aftercare","svc.6d":"Property management and care while you're back in Poland.","svc.cta":"See all our services",
     "cost.eyebrow":"No surprises","cost.h2":"Full cost transparency",
     "cost.body":"Price isn't everything. Before you sign anything, we show you the real total cost — taxes, notary, registry and lawyer. You know exactly what you'll pay. Always.","cost.cta":"Calculate your cost",
     "cost.r1":"Property price","cost.r2":"Tax (transfer or VAT)","cost.r3":"Notary & registry","cost.r4":"Independent lawyer","cost.total":"Estimated total cost",
@@ -681,7 +743,7 @@ const I18N = {
     "foot.explore":"Explore","foot.contact":"Contact","foot.lang":"Language","foot.rights":"prototype","foot.legal":"Privacy policy · Cookies · Legal notice"
   },
   es:{
-    "nav.process":"Proceso","nav.zones":"Zonas","nav.properties":"Propiedades","nav.life":"La vida aquí","nav.contact":"Contacto","nav.cta":"Hablemos",
+    "nav.process":"Proceso","nav.zones":"Zonas","nav.properties":"Propiedades","nav.life":"La vida aquí","nav.contact":"Contacto","nav.cta":"Hablemos","nav.services":"Servicios","nav.blog":"Guía","wa.float":"Escríbenos por WhatsApp",
     "hero.eyebrow":"Agencia para el mercado polaco · Costa Blanca, Alicante",
     "hero.h1":"Tu nuevo hogar te espera al <em>sol</em>.",
     "hero.sub":"Te guiamos en todo el proceso, en tu idioma, paso a paso. Desde la primera llamada hasta las llaves en tu mano.",
@@ -712,6 +774,7 @@ const I18N = {
     "life.2t":"Mar y playas","life.2d":"Kilómetros de playas con bandera azul, calas tranquilas y el cálido Mediterráneo.",
     "life.3t":"Gastronomía y vino","life.3d":"Paella, pescado fresco, mercados locales y vino. El estilo de vida mediterráneo, cada día.",
     "life.4t":"Seguridad","life.4d":"Pueblos tranquilos y una de las regiones más seguras de Europa para las familias.",
+    "svc.eyebrow":"Un solo equipo, todo el camino","svc.h2":"Nos ocupamos de todo","svc.sub":"Del número NIE al sofá de tu salón. Tú eliges la casa; de lo demás nos encargamos nosotros.","svc.1t":"NIE y trámites","svc.1d":"Número NIE, registro de ciudadano de la UE y todas las gestiones — lo hacemos por ti.","svc.2t":"Abogado y notaría","svc.2d":"Un abogado independiente revisa cada documento. Una firma segura ante notario.","svc.3t":"Hipoteca y banco","svc.3d":"Cuenta en banco español e hipoteca para no residentes en las mejores condiciones.","svc.4t":"Suministros y seguro","svc.4d":"Luz, agua, internet y seguro de hogar — dados de alta y a tu nombre.","svc.5t":"Interiorismo y muebles","svc.5d":"Proyecto de interiorismo, reforma y packs de muebles. Entras a una casa lista y amueblada.","svc.6t":"Postventa","svc.6d":"Gestión y cuidado de tu vivienda mientras estás en Polonia.","svc.cta":"Ver todos los servicios",
     "cost.eyebrow":"Sin sorpresas","cost.h2":"Transparencia total de costes",
     "cost.body":"El precio no lo es todo. Antes de firmar nada, te mostramos el coste total real: impuestos, notaría, registro y abogado. Sabes exactamente lo que pagarás. Siempre.","cost.cta":"Calcula tu coste",
     "cost.r1":"Precio de la propiedad","cost.r2":"Impuesto (ITP o IVA)","cost.r3":"Notaría y registro","cost.r4":"Abogado independiente","cost.total":"Coste total estimado",
@@ -733,6 +796,7 @@ const I18N = {
   }
 };
 const TITLES = {pl:"Vía Sol — Polskie biuro nieruchomości na Costa Blanca",en:"Vía Sol — Polish-speaking estate agency on the Costa Blanca",es:"Vía Sol — Inmobiliaria para el mercado polaco en la Costa Blanca"};
+const WA = {pl:"Dzień dobry! Piszę w sprawie nieruchomości na Costa Blanca.",en:"Hello! I'm writing about a property on the Costa Blanca.",es:"¡Hola! Escribo por una propiedad en la Costa Blanca."};
 
 function setLang(lang){
   const dict = I18N[lang]; if(!dict) return;
@@ -747,6 +811,7 @@ function setLang(lang){
     if(dict[k]!==undefined) el.placeholder = dict[k];
   });
   document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on", b.dataset.lang===lang));
+  const wa=document.getElementById("waFloat"); if(wa&&WA[lang]) wa.href="https://wa.me/34600000000?text="+encodeURIComponent(WA[lang]);
 }
 document.querySelectorAll("#lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
 
@@ -766,6 +831,13 @@ document.getElementById("leadForm").addEventListener("submit",e=>{
   document.getElementById("formFields").style.display="none";
   document.getElementById("formOk").classList.add("show");
 });
+
+// mobile menu
+const menuBtn=document.getElementById("menuBtn");
+if(menuBtn){
+  menuBtn.addEventListener("click",()=>{const o=hd.classList.toggle("open");menuBtn.setAttribute("aria-expanded",o);});
+  document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>{hd.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");}));
+}
 </script>
 </body>
 </html>

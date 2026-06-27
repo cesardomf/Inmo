@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTA: sustituye https://viasol.example por tu dominio real antes de publicar. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Páginas principales -->
+  <url><loc>https://viasol.example/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://viasol.example/promociones.html</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://viasol.example/servicios.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Hubs del blog (por idioma) -->
+  <url>
+    <loc>https://viasol.example/blog/pl/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/en/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/es/</loc><lastmod>2026-06-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/"/>
+  </url>
+
+  <!-- Artículo: NIE -->
+  <url>
+    <loc>https://viasol.example/blog/pl/numer-nie-w-hiszpanii.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/numer-nie-w-hiszpanii.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/nie-number-in-spain.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/numero-nie-en-espana.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/nie-number-in-spain.html"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/en/nie-number-in-spain.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/numer-nie-w-hiszpanii.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/nie-number-in-spain.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/numero-nie-en-espana.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/nie-number-in-spain.html"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/es/numero-nie-en-espana.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/numer-nie-w-hiszpanii.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/nie-number-in-spain.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/numero-nie-en-espana.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/nie-number-in-spain.html"/>
+  </url>
+
+  <!-- Artículo: Costes / Impuestos -->
+  <url>
+    <loc>https://viasol.example/blog/pl/ile-kosztuje-zakup-nieruchomosci-w-hiszpanii.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/ile-kosztuje-zakup-nieruchomosci-w-hiszpanii.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/cost-of-buying-property-in-spain.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/cuanto-cuesta-comprar-casa-en-espana.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/cost-of-buying-property-in-spain.html"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/en/cost-of-buying-property-in-spain.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/ile-kosztuje-zakup-nieruchomosci-w-hiszpanii.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/cost-of-buying-property-in-spain.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/cuanto-cuesta-comprar-casa-en-espana.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/cost-of-buying-property-in-spain.html"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/es/cuanto-cuesta-comprar-casa-en-espana.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/ile-kosztuje-zakup-nieruchomosci-w-hiszpanii.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/cost-of-buying-property-in-spain.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/cuanto-cuesta-comprar-casa-en-espana.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/cost-of-buying-property-in-spain.html"/>
+  </url>
+
+  <!-- Artículo: Hipoteca -->
+  <url>
+    <loc>https://viasol.example/blog/pl/kredyt-hipoteczny-w-hiszpanii-dla-nierezydentow.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/kredyt-hipoteczny-w-hiszpanii-dla-nierezydentow.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/mortgage-for-non-residents-in-spain.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/hipoteca-para-no-residentes-en-espana.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/mortgage-for-non-residents-in-spain.html"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/en/mortgage-for-non-residents-in-spain.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/kredyt-hipoteczny-w-hiszpanii-dla-nierezydentow.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/mortgage-for-non-residents-in-spain.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/hipoteca-para-no-residentes-en-espana.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/mortgage-for-non-residents-in-spain.html"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/es/hipoteca-para-no-residentes-en-espana.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/kredyt-hipoteczny-w-hiszpanii-dla-nierezydentow.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/mortgage-for-non-residents-in-spain.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/hipoteca-para-no-residentes-en-espana.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/mortgage-for-non-residents-in-spain.html"/>
+  </url>
+
+  <!-- Artículo: Proceso -->
+  <url>
+    <loc>https://viasol.example/blog/pl/jak-kupic-nieruchomosc-na-costa-blanca.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/jak-kupic-nieruchomosc-na-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/how-to-buy-property-costa-blanca-step-by-step.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/como-comprar-vivienda-costa-blanca-paso-a-paso.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/how-to-buy-property-costa-blanca-step-by-step.html"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/en/how-to-buy-property-costa-blanca-step-by-step.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/jak-kupic-nieruchomosc-na-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/how-to-buy-property-costa-blanca-step-by-step.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/como-comprar-vivienda-costa-blanca-paso-a-paso.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/how-to-buy-property-costa-blanca-step-by-step.html"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/es/como-comprar-vivienda-costa-blanca-paso-a-paso.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/jak-kupic-nieruchomosc-na-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/how-to-buy-property-costa-blanca-step-by-step.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/como-comprar-vivienda-costa-blanca-paso-a-paso.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/how-to-buy-property-costa-blanca-step-by-step.html"/>
+  </url>
+
+  <!-- Artículo: Vivir -->
+  <url>
+    <loc>https://viasol.example/blog/pl/zycie-na-costa-blanca.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/zycie-na-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/living-on-the-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/vivir-en-la-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/living-on-the-costa-blanca.html"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/en/living-on-the-costa-blanca.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/zycie-na-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/living-on-the-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/vivir-en-la-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/living-on-the-costa-blanca.html"/>
+  </url>
+  <url>
+    <loc>https://viasol.example/blog/es/vivir-en-la-costa-blanca.html</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viasol.example/blog/pl/zycie-na-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viasol.example/blog/en/living-on-the-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://viasol.example/blog/es/vivir-en-la-costa-blanca.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://viasol.example/blog/en/living-on-the-costa-blanca.html"/>
+  </url>
+
+</urlset>

@@ -15,6 +15,7 @@
 <meta property="og:description" content="Nowe osiedla i wille na Costa Blanca: Calpe, Finestrat i Villajoyosa. Pełna obsługa po polsku.">
 <meta property="og:image" content="https://www.camporrosso.es/wp-content/uploads/2025/10/1.-Camporrosso-Towers-inicio.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%23EE6C2D'/%3E%3Cpath d='M11 26c4-7 14-7 18 0' stroke='white' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='20' cy='14' r='4.5' fill='%23FFD9A8'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://www.camporrosso.es">
@@ -88,30 +89,48 @@
 
   .micro{font-size:.78rem;color:var(--ink-soft);font-style:italic;padding-bottom:30px}
 
-  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.nav-links{display:none}}
-  @media(max-width:600px){.grid{grid-template-columns:1fr}}
-  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;color:var(--ink)}
+  @media(max-width:900px){
+    .grid{grid-template-columns:1fr 1fr}
+    .nav-links{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:2px;display:none;background:var(--chalk-2);padding:12px 24px 18px;border-top:1px solid var(--line);box-shadow:0 24px 40px -22px rgba(14,61,69,.5)}
+    header.open .nav-links{display:flex}
+    .nav-links a{padding:.7rem 0;border-bottom:1px solid var(--line)}
+    .menu-btn{display:block}
+    .nav-cta{display:none}
+  }
+  @media(max-width:600px){.grid{grid-template-columns:1fr}.wa-float .wa-tx{display:none}.wa-float{padding:.85rem;right:14px;bottom:14px}}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}.wa-pulse{animation:none!important}}
+
+  /* floating whatsapp */
+  .wa-float{position:fixed;right:18px;bottom:18px;z-index:80;display:inline-flex;align-items:center;gap:.55rem;background:#25D366;color:#fff;font-weight:600;font-size:.92rem;padding:.7rem .95rem;border-radius:999px;box-shadow:0 14px 30px -10px rgba(37,211,102,.6);transition:transform .18s,box-shadow .18s}
+  .wa-float:hover{transform:translateY(-2px);box-shadow:0 18px 36px -12px rgba(37,211,102,.75)}
+  .wa-float svg,.wa-float .wa-tx{position:relative;z-index:2}
+  .wa-float .wa-tx{white-space:nowrap}
+  .wa-pulse{position:absolute;inset:0;border-radius:999px;animation:wapulse 2.6s infinite;z-index:1}
+  @keyframes wapulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a href="via-sol-home.html" class="brand">
+    <a href="index.html" class="brand">
       <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#EE6C2D"/><path d="M11 26c4-7 14-7 18 0" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="14" r="4.5" fill="#FFD9A8"/></svg>
       Vía Sol
     </a>
-    <nav class="nav-links">
-      <a href="via-sol-home.html#process" data-i18n="nav.process">Proces</a>
-      <a href="via-sol-home.html#zones" data-i18n="nav.zones">Lokalizacje</a>
-      <a href="via-sol-home.html#life" data-i18n="nav.life">Życie tutaj</a>
-      <a href="via-sol-home.html#contact" data-i18n="nav.contact">Kontakt</a>
+    <nav class="nav-links" id="navlinks">
+      <a href="index.html#process" data-i18n="nav.process">Proces</a>
+      <a href="servicios.html" data-i18n="nav.services">Usługi</a>
+      <a href="blog/index.html" data-i18n="nav.blog">Poradnik</a>
+      <a href="index.html#life" data-i18n="nav.life">Życie tutaj</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Kontakt</a>
     </nav>
     <div class="nav-right">
       <div class="lang" id="lang">
         <button data-lang="pl" class="on">PL</button><button data-lang="en">EN</button><button data-lang="es">ES</button>
       </div>
-      <a href="via-sol-home.html#contact" class="btn btn-sun" style="padding:.5rem 1rem;font-size:.85rem" data-i18n="nav.cta">Rozmowa</a>
+      <a href="index.html#contact" class="btn btn-sun nav-cta" style="padding:.5rem 1rem;font-size:.85rem" data-i18n="nav.cta">Rozmowa</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     </div>
   </div>
 </header>
@@ -143,7 +162,7 @@
         <h3>Camporrosso Towers</h3>
         <p class="cdesc" data-i18n="p1.d">Apartamenty z tarasami u stóp skały Peñón de Ifach, z widokiem na morze, lagunę i góry.</p>
         <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
-        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+        <a href="index.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
       </div>
     </article>
 
@@ -156,7 +175,7 @@
         <h3>Camporrosso Sierra Cortina</h3>
         <p class="cdesc" data-i18n="p2.d">Ekskluzywne osiedle z widokiem na panoramę Benidorm i górę Puig Campana, kilka minut od wszystkiego.</p>
         <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
-        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+        <a href="index.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
       </div>
     </article>
 
@@ -169,7 +188,7 @@
         <h3>Camporrosso Golden Leaves</h3>
         <p class="cdesc" data-i18n="p3.d">Apartamenty z wielkimi tarasami i panoramą plaż Calpe oraz Peñón de Ifach.</p>
         <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
-        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+        <a href="index.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
       </div>
     </article>
 
@@ -182,7 +201,7 @@
         <h3>Camporrosso Serpentine</h3>
         <p class="cdesc" data-i18n="p4.d">Nowy village z rozległymi ogrodami, ścieżkami rowerowymi i wszystkimi domami zwróconymi ku morzu.</p>
         <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
-        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+        <a href="index.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
       </div>
     </article>
 
@@ -195,7 +214,7 @@
         <h3>Siete Joyas by Camporrosso</h3>
         <p class="cdesc" data-i18n="p5.d">Siedem unikatowych willi, każda inna, wszystkie zwrócone ku morzu i na południe.</p>
         <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
-        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+        <a href="index.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
       </div>
     </article>
 
@@ -208,7 +227,7 @@
         <h3>Allonbay Aster</h3>
         <p class="cdesc" data-i18n="p6.d">Domy, apartamenty i penthouse'y 1–3 sypialnie z basenami, spa i siłownią, 100 m od plaży.</p>
         <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
-        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+        <a href="index.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
       </div>
     </article>
 
@@ -221,7 +240,7 @@
         <h3>Las Villas Balcón de Finestrat</h3>
         <p class="cdesc" data-i18n="p7.d">7 niezależnych willi parterowych z prywatnym basenem 36 m² i klasą energetyczną A.</p>
         <div class="price"><small data-i18n="card.from">od</small> 725 900 €</div>
-        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+        <a href="index.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
       </div>
     </article>
 
@@ -234,7 +253,7 @@
         <h3>Alonis Living</h3>
         <p class="cdesc" data-i18n="p8.d">164 apartamenty i penthouse'y 1–3 sypialnie z tarasami, 5 minut spacerem od Playa del Torres.</p>
         <div class="price req" data-i18n="card.onreq">Cena na zapytanie</div>
-        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+        <a href="index.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
       </div>
     </article>
 
@@ -247,7 +266,7 @@
         <h3>Salisol Golf Villas</h3>
         <p class="cdesc" data-i18n="p9.d">Nowoczesne wille z basenem, widokiem na morze i sierrę, przy polu golfowym.</p>
         <div class="price"><small data-i18n="card.from">od</small> 495 000 €</div>
-        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+        <a href="index.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
       </div>
     </article>
 
@@ -260,7 +279,7 @@
         <h3>Marqués Golf Resort</h3>
         <p class="cdesc" data-i18n="p10.d">Apartamenty z panoramicznym widokiem w resorcie golfowym Finestrat–Benidorm.</p>
         <div class="price"><small data-i18n="card.from">od</small> 269 900 €</div>
-        <a href="via-sol-home.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
+        <a href="index.html#contact" class="askbtn" data-i18n="card.ask">Zapytaj o cenę →</a>
       </div>
     </article>
 
@@ -271,11 +290,18 @@
   <div class="ctaband">
     <h2 data-i18n="cta.h">Nie wiesz, którą wybrać?</h2>
     <p data-i18n="cta.p">Powiedz nam, czego szukasz i jaki masz budżet. Przygotujemy dopasowaną listę i pokażemy wszystko na miejscu — po polsku.</p>
-    <a href="via-sol-home.html#contact" class="btn btn-sun" data-i18n="cta.btn">Umów bezpłatną rozmowę</a>
+    <a href="index.html#contact" class="btn btn-sun" data-i18n="cta.btn">Umów bezpłatną rozmowę</a>
   </div>
 
   <p class="micro" data-i18n="disclaimer">Materiały i wizualizacje pochodzą od deweloperów i mają charakter poglądowy. Ceny orientacyjne, niewiążące; pełne ceny, plany i dostępność potwierdzamy po kontakcie.</p>
 </div>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" id="waFloat" href="https://wa.me/34600000000?text=Dzie%C5%84%20dobry!%20Pisz%C4%99%20w%20sprawie%20nieruchomo%C5%9Bci%20na%20Costa%20Blanca." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+  <span class="wa-pulse" aria-hidden="true"></span>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.4.6c-.1.2-.3.3-.1.6.1.3.7 1.1 1.4 1.7.9.8 1.6 1 1.9 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.4.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+  <span class="wa-tx" data-i18n="wa.float">Napisz po polsku</span>
+</a>
 
 <footer>
   <div class="wrap foot">
@@ -283,7 +309,7 @@
       <svg width="24" height="24" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#EE6C2D"/><path d="M11 26c4-7 14-7 18 0" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="14" r="4.5" fill="#FFD9A8"/></svg>
       Vía Sol
     </div>
-    <div>© 2026 Vía Sol — <span data-i18n="foot.rights">prototyp</span> · <a href="via-sol-home.html" data-i18n="foot.home">Strona główna</a></div>
+    <div>© 2026 Vía Sol — <span data-i18n="foot.rights">prototyp</span> · <a href="index.html" data-i18n="foot.home">Strona główna</a></div>
   </div>
 </footer>
 
@@ -311,7 +337,7 @@
 
 <script>
 const I18N={
- pl:{"nav.process":"Proces","nav.zones":"Lokalizacje","nav.life":"Życie tutaj","nav.contact":"Kontakt","nav.cta":"Rozmowa",
+ pl:{"nav.process":"Proces","nav.zones":"Lokalizacje","nav.life":"Życie tutaj","nav.contact":"Kontakt","nav.cta":"Rozmowa","nav.services":"Usługi","nav.blog":"Poradnik","wa.float":"Napisz po polsku",
   "hero.eyebrow":"Inwestycje · Costa Blanca, Alicante","hero.h1":"Nowe osiedla i wille na Costa Blanca",
   "hero.sub":"Współpracujemy z czołowymi deweloperami regionu — <b>Camporrosso, Quadratia, Immosol, Sonneil i Breezom</b>. Wybierz inwestycję, a my zajmiemy się resztą: od wizyty po klucze, po polsku.",
   "filter.all":"Wszystkie","card.from":"od","card.onreq":"Cena na zapytanie","card.ask":"Zapytaj o cenę →","empty":"Brak inwestycji w tej lokalizacji.",
@@ -328,7 +354,7 @@ const I18N={
   "cta.h":"Nie wiesz, którą wybrać?","cta.p":"Powiedz nam, czego szukasz i jaki masz budżet. Przygotujemy dopasowaną listę i pokażemy wszystko na miejscu — po polsku.","cta.btn":"Umów bezpłatną rozmowę",
   "disclaimer":"Materiały i wizualizacje pochodzą od deweloperów i mają charakter poglądowy. Ceny orientacyjne, niewiążące; pełne ceny, plany i dostępność potwierdzamy po kontakcie.",
   "foot.rights":"prototyp","foot.home":"Strona główna"},
- en:{"nav.process":"Process","nav.zones":"Locations","nav.life":"Life here","nav.contact":"Contact","nav.cta":"Talk to us",
+ en:{"nav.process":"Process","nav.zones":"Locations","nav.life":"Life here","nav.contact":"Contact","nav.cta":"Talk to us","nav.services":"Services","nav.blog":"Guide","wa.float":"Chat on WhatsApp",
   "hero.eyebrow":"Developments · Costa Blanca, Alicante","hero.h1":"New developments and villas on the Costa Blanca",
   "hero.sub":"We work with the region's leading developers — <b>Camporrosso, Quadratia, Immosol, Sonneil and Breezom</b>. Pick a development and we handle the rest: from the visit to the keys, in your language.",
   "filter.all":"All","card.from":"from","card.onreq":"Price on request","card.ask":"Ask for the price →","empty":"No developments in this location.",
@@ -345,7 +371,7 @@ const I18N={
   "cta.h":"Not sure which one?","cta.p":"Tell us what you're after and your budget. We'll prepare a tailored shortlist and show you everything on the ground — in your language.","cta.btn":"Book a free call",
   "disclaimer":"Materials and renders are provided by the developers and are for illustration only. Prices are indicative and non-binding; full prices, plans and availability are confirmed on request.",
   "foot.rights":"prototype","foot.home":"Home"},
- es:{"nav.process":"Proceso","nav.zones":"Zonas","nav.life":"La vida aquí","nav.contact":"Contacto","nav.cta":"Hablemos",
+ es:{"nav.process":"Proceso","nav.zones":"Zonas","nav.life":"La vida aquí","nav.contact":"Contacto","nav.cta":"Hablemos","nav.services":"Servicios","nav.blog":"Guía","wa.float":"Escríbenos por WhatsApp",
   "hero.eyebrow":"Promociones · Costa Blanca, Alicante","hero.h1":"Nuevas promociones y villas en la Costa Blanca",
   "hero.sub":"Trabajamos con los principales promotores de la zona — <b>Camporrosso, Quadratia, Immosol, Sonneil y Breezom</b>. Elige una promoción y nosotros nos ocupamos del resto: de la visita a las llaves, en tu idioma.",
   "filter.all":"Todas","card.from":"desde","card.onreq":"Precio a consultar","card.ask":"Consultar precio →","empty":"No hay promociones en esta zona.",
@@ -364,9 +390,11 @@ const I18N={
   "foot.rights":"prototipo","foot.home":"Inicio"}
 };
 const TITLES={pl:"Inwestycje na Costa Blanca — apartamenty i wille | Vía Sol",en:"Developments on the Costa Blanca — apartments and villas | Vía Sol",es:"Promociones en la Costa Blanca — apartamentos y villas | Vía Sol"};
+const WA={pl:"Dzień dobry! Piszę w sprawie nieruchomości na Costa Blanca.",en:"Hello! I'm writing about a property on the Costa Blanca.",es:"¡Hola! Escribo por una propiedad en la Costa Blanca."};
 function setLang(l){const d=I18N[l];if(!d)return;document.documentElement.lang=l;document.title=TITLES[l];
  document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(d[k]!==undefined)e.innerHTML=d[k];});
- document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));}
+ document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));
+ const wa=document.getElementById("waFloat");if(wa&&WA[l])wa.href="https://wa.me/34600000000?text="+encodeURIComponent(WA[l]);}
 document.querySelectorAll("#lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
 
 const cards=[...document.querySelectorAll("#grid .card")];
@@ -376,6 +404,12 @@ document.querySelectorAll("#filters .chip").forEach(c=>c.addEventListener("click
  cards.forEach(card=>{const m=loc==="all"||card.dataset.loc===loc;card.style.display=m?"":"none";if(m)shown++;});
  document.getElementById("empty").style.display=shown?"none":"block";
 }));
+
+const menuBtn=document.getElementById("menuBtn"),hd=document.querySelector("header");
+if(menuBtn){
+ menuBtn.addEventListener("click",()=>{const o=hd.classList.toggle("open");menuBtn.setAttribute("aria-expanded",o);});
+ document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>{hd.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");}));
+}
 </script>
 </body>
 </html>

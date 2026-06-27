@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Reemplaza el dominio por el definitivo antes de publicar / Replace the domain before going live
+Sitemap: https://viasol.example/sitemap.xml
