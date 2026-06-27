@@ -120,7 +120,7 @@
         <h4>Contacto</h4>
         <a href="https://wa.me/34654271954" target="_blank" rel="noopener">WhatsApp +34 654 27 19 54</a>
         <a href="mailto:kontakt@viasol.es">kontakt@viasol.es</a>
-        <a href="../../index.html#contact">Orihuela Costa, Alicante</a>
+        <a href="../../index.html#contact">San Juan de Alicante</a>
       </div>
     </div>
     <div class="foot-bottom"><span>© 2026 Vía Sol — prototipo</span><span>Política de privacidad · Cookies · Aviso legal</span></div>
@@ -131,6 +131,7 @@
 const hd=document.getElementById("hd"),mb=document.getElementById("menuBtn");
 if(mb){mb.addEventListener("click",()=>{const o=hd.classList.toggle("open");mb.setAttribute("aria-expanded",o);});
 document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>hd.classList.remove("open")));}
+try{localStorage.setItem('vsLang',document.documentElement.lang)}catch(e){}
 </script>
 </body>
 </html>

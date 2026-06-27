@@ -14,9 +14,13 @@
 <script>
 (function(){
   var map={pl:"pl",en:"en",es:"es"};
-  var langs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||"pl"];
-  var dest="pl";
-  for(var i=0;i<langs.length;i++){var c=(langs[i]||"").slice(0,2).toLowerCase();if(map[c]){dest=map[c];break;}}
+  var dest="pl", stored;
+  try{stored=localStorage.getItem('vsLang')}catch(e){}
+  if(stored&&map[stored]){dest=stored;}
+  else{
+    var langs=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||"pl"];
+    for(var i=0;i<langs.length;i++){var c=(langs[i]||"").slice(0,2).toLowerCase();if(map[c]){dest=map[c];break;}}
+  }
   location.replace(dest+"/");
 })();
 </script>

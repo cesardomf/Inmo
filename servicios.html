@@ -302,7 +302,7 @@
         <h4 data-i18n="foot.contact">Kontakt</h4>
         <a href="https://wa.me/34654271954" target="_blank" rel="noopener">WhatsApp +34 654 27 19 54</a>
         <a href="mailto:kontakt@viasol.es">kontakt@viasol.es</a>
-        <a href="index.html#contact" data-i18n="ct.office">Orihuela Costa, Alicante</a>
+        <a href="index.html#contact" data-i18n="ct.office">San Juan de Alicante</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -378,7 +378,7 @@ const I18N={
   "faq.q5":"Czy pomożecie z hipoteką?","faq.a5":"Tak. Hiszpańskie banki finansują nierezydentom zwykle 60–70% wartości nieruchomości. Przygotujemy komplet dokumentów, porównamy oferty i wynegocjujemy warunki.",
   "faq.q6":"Co dzieje się po zakupie?","faq.a6":"Przepisujemy media, ubezpieczamy dom i pomagamy z meldunkiem. A jeśli chcesz — projektujemy wnętrze, umeblujemy je i zaopiekujemy się nieruchomością, gdy jesteś w Polsce.",
   "scta.eyebrow":"Pierwszy krok jest za darmo","scta.h":"Powiedz nam, czego szukasz","scta.p":"Umów bezpłatną rozmowę po polsku lub napisz na WhatsApp. Bez zobowiązań i bez nachalnej sprzedaży — najpierw słuchamy, potem doradzamy.","scta.b1":"Umów bezpłatną rozmowę","scta.b2":"Napisz na WhatsApp",
-  "foot.tag":"Polskie biuro nieruchomości na Costa Blanca. Prowadzimy Cię do domu w słońcu — krok po kroku.","foot.explore":"Nawigacja","foot.home":"Strona główna","foot.contact":"Kontakt","ct.office":"Orihuela Costa, Alicante","foot.rights":"prototyp","foot.legal":"Polityka prywatności · Cookies · Nota prawna"
+  "foot.tag":"Polskie biuro nieruchomości na Costa Blanca. Prowadzimy Cię do domu w słońcu — krok po kroku.","foot.explore":"Nawigacja","foot.home":"Strona główna","foot.contact":"Kontakt","ct.office":"San Juan de Alicante","foot.rights":"prototyp","foot.legal":"Polityka prywatności · Cookies · Nota prawna"
  },
  en:{
   "nav.process":"Process","nav.properties":"Homes","nav.services":"Services","nav.blog":"Guide","nav.contact":"Contact","nav.cta":"Talk to us","wa.float":"Chat on WhatsApp",
@@ -410,7 +410,7 @@ const I18N={
   "faq.q5":"Will you help with a mortgage?","faq.a5":"Yes. Spanish banks usually lend non-residents 60–70% of the property value. We prepare the full file, compare offers and negotiate the terms.",
   "faq.q6":"What happens after the purchase?","faq.a6":"We transfer the utilities, insure the home and help with registration. And if you wish, we design the interior, furnish it and look after the property while you're in Poland.",
   "scta.eyebrow":"The first step is free","scta.h":"Tell us what you're looking for","scta.p":"Book a free call in your language or message us on WhatsApp. No obligation and no pushy sales — first we listen, then we advise.","scta.b1":"Book a free call","scta.b2":"Message us on WhatsApp",
-  "foot.tag":"Polish-speaking estate agency on the Costa Blanca. We guide you home to the sun — step by step.","foot.explore":"Explore","foot.home":"Home","foot.contact":"Contact","ct.office":"Orihuela Costa, Alicante","foot.rights":"prototype","foot.legal":"Privacy policy · Cookies · Legal notice"
+  "foot.tag":"Polish-speaking estate agency on the Costa Blanca. We guide you home to the sun — step by step.","foot.explore":"Explore","foot.home":"Home","foot.contact":"Contact","ct.office":"San Juan de Alicante","foot.rights":"prototype","foot.legal":"Privacy policy · Cookies · Legal notice"
  },
  es:{
   "nav.process":"Proceso","nav.properties":"Propiedades","nav.services":"Servicios","nav.blog":"Guía","nav.contact":"Contacto","nav.cta":"Hablemos","wa.float":"Escríbenos por WhatsApp",
@@ -442,18 +442,19 @@ const I18N={
   "faq.q5":"¿Ayudáis con la hipoteca?","faq.a5":"Sí. Los bancos españoles financian a los no residentes normalmente el 60–70% del valor. Preparamos el expediente completo, comparamos ofertas y negociamos las condiciones.",
   "faq.q6":"¿Qué pasa después de comprar?","faq.a6":"Cambiamos los suministros, aseguramos la casa y ayudamos con el empadronamiento. Y si quieres, diseñamos el interior, lo amueblamos y cuidamos la propiedad mientras estás en Polonia.",
   "scta.eyebrow":"El primer paso es gratis","scta.h":"Dinos qué estás buscando","scta.p":"Reserva una llamada gratis en tu idioma o escríbenos por WhatsApp. Sin compromiso y sin ventas agresivas — primero escuchamos, luego asesoramos.","scta.b1":"Reserva una llamada gratis","scta.b2":"Escríbenos por WhatsApp",
-  "foot.tag":"Agencia inmobiliaria para el mercado polaco en la Costa Blanca. Te guiamos hasta tu casa al sol, paso a paso.","foot.explore":"Explora","foot.home":"Inicio","foot.contact":"Contacto","ct.office":"Orihuela Costa, Alicante","foot.rights":"prototipo","foot.legal":"Política de privacidad · Cookies · Aviso legal"
+  "foot.tag":"Agencia inmobiliaria para el mercado polaco en la Costa Blanca. Te guiamos hasta tu casa al sol, paso a paso.","foot.explore":"Explora","foot.home":"Inicio","foot.contact":"Contacto","ct.office":"San Juan de Alicante","foot.rights":"prototipo","foot.legal":"Política de privacidad · Cookies · Aviso legal"
  }
 };
 const TITLES={pl:"Usługi: NIE, prawnik, hipoteka, media i wykończenie | Vía Sol",en:"Services: NIE, lawyer, mortgage, utilities & interiors | Vía Sol",es:"Servicios: NIE, abogado, hipoteca, suministros e interiorismo | Vía Sol"};
 const WA={pl:"Dzień dobry! Piszę w sprawie usług przy zakupie nieruchomości na Costa Blanca.",en:"Hello! I'm writing about your services for buying a property on the Costa Blanca.",es:"¡Hola! Escribo por vuestros servicios para comprar una propiedad en la Costa Blanca."};
 const BHUB={pl:"blog/pl/",en:"blog/en/",es:"blog/es/"};
-function setLang(l){const d=I18N[l];if(!d)return;document.documentElement.lang=l;document.title=TITLES[l];
+function setLang(l){const d=I18N[l];if(!d)return;try{localStorage.setItem('vsLang',l)}catch(e){}document.documentElement.lang=l;document.title=TITLES[l];
  document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(d[k]!==undefined)e.innerHTML=d[k];});
  document.querySelectorAll("#lang button").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));
  const wa=document.getElementById("waFloat");if(wa&&WA[l])wa.href="https://wa.me/34654271954?text="+encodeURIComponent(WA[l]);
  const nb=document.getElementById("navBlog"),fb=document.getElementById("footBlog");if(nb)nb.href=BHUB[l];if(fb)fb.href=BHUB[l];}
 document.querySelectorAll("#lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+(function(){let l;try{l=localStorage.getItem('vsLang')}catch(e){}if(!l){const n=(navigator.language||'pl').slice(0,2).toLowerCase();l=['pl','en','es'].indexOf(n)>=0?n:'pl';}setLang(l);})();
 
 const hd=document.getElementById("hd"),menuBtn=document.getElementById("menuBtn");
 if(menuBtn){
