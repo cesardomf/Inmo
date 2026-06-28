@@ -209,6 +209,17 @@
   .cost-total{display:flex;justify-content:space-between;margin-top:1rem;padding-top:1rem;
     border-top:2px solid rgba(255,255,255,.3);font-weight:600}
   .cost-total b{font-family:"Fraunces";font-size:1.3rem;color:#fff}
+  .calc-field{margin-bottom:14px}
+  .calc-field label{display:block;font-size:.85rem;color:rgba(255,255,255,.8);margin-bottom:.45rem;font-weight:600}
+  .calc-price{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:.1rem .9rem}
+  .calc-price input{flex:1;min-width:0;background:transparent;border:0;color:#fff;font-family:"Fraunces";font-size:1.5rem;font-weight:600;padding:.5rem 0;-moz-appearance:textfield}
+  .calc-price input::-webkit-outer-spin-button,.calc-price input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .calc-price input:focus{outline:none}
+  .calc-price span{font-family:"Fraunces";font-size:1.35rem;color:var(--sun-soft)}
+  .calc-toggle{display:flex;gap:8px;margin-bottom:16px}
+  .calc-toggle button{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.85);padding:.6rem;border-radius:10px;cursor:pointer;font-weight:600;font-size:.86rem;transition:.15s}
+  .calc-toggle button.on{background:var(--sun);border-color:var(--sun);color:#fff}
+  .calc-disc{font-size:.76rem;color:rgba(255,255,255,.6);margin-top:1rem;font-style:italic}
 
   /* testimonials */
   .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:46px}
@@ -525,11 +536,20 @@
       <a href="#contact" class="btn btn-sun" style="margin-top:1.6rem" data-i18n="cost.cta">Oblicz swój koszt</a>
     </div>
     <div class="cost-list reveal">
-      <div class="cost-row"><span data-i18n="cost.r1">Cena nieruchomości</span><b>264 000 €</b></div>
-      <div class="cost-row"><span data-i18n="cost.r2">Podatek (ITP lub VAT)</span><b>~10%</b></div>
-      <div class="cost-row"><span data-i18n="cost.r3">Notariusz i rejestr</span><b>~1,5%</b></div>
-      <div class="cost-row"><span data-i18n="cost.r4">Niezależny prawnik</span><b>~1%</b></div>
-      <div class="cost-total"><span data-i18n="cost.total">Koszt całkowity, szacunkowo</span><b>~ +10–13%</b></div>
+      <div class="calc-field">
+        <label for="calcPrice" data-i18n="cost.r1">Cena nieruchomości</label>
+        <div class="calc-price"><input type="number" id="calcPrice" value="264000" min="0" step="1000" inputmode="numeric" aria-label="Precio"><span>€</span></div>
+      </div>
+      <div class="calc-toggle" id="calcType">
+        <button type="button" data-type="resale" class="on" data-i18n="calc.resale">Z drugiej ręki</button>
+        <button type="button" data-type="new" data-i18n="calc.new">Nowy (deweloper)</button>
+      </div>
+      <div class="cost-row"><span data-i18n="cost.r2">Podatek (ITP lub VAT)</span><b id="cTax">—</b></div>
+      <div class="cost-row"><span data-i18n="cost.r3">Notariusz i rejestr</span><b id="cNotary">—</b></div>
+      <div class="cost-row"><span data-i18n="cost.r4">Niezależny prawnik</span><b id="cLawyer">—</b></div>
+      <div class="cost-total"><span data-i18n="cost.total">Koszt całkowity, szacunkowo</span><b id="cTotal">—</b></div>
+      <div class="cost-row" style="border:0;padding-top:.5rem;opacity:.85;font-size:.85rem"><span data-i18n="calc.over">≈ ponad cenę</span><b id="cPct">—</b></div>
+      <p class="calc-disc" data-i18n="calc.disc">Szacunki orientacyjne dla Wspólnoty Walenckiej. Dokładny koszt potwierdzamy przy konkretnej nieruchomości.</p>
     </div>
   </div>
 </section>
@@ -709,6 +729,7 @@ const I18N = {
     "cost.eyebrow":"Bez niespodzianek","cost.h2":"Pełna przejrzystość kosztów",
     "cost.body":"Cena to nie wszystko. Zanim cokolwiek podpiszesz, pokazujemy Ci realny koszt całkowity — podatki, notariusza, rejestr i prawnika. Wiesz dokładnie, ile zapłacisz. Zawsze.","cost.cta":"Oblicz swój koszt",
     "cost.r1":"Cena nieruchomości","cost.r2":"Podatek (ITP lub VAT)","cost.r3":"Notariusz i rejestr","cost.r4":"Niezależny prawnik","cost.total":"Koszt całkowity, szacunkowo",
+    "calc.resale":"Z drugiej ręki","calc.new":"Nowy (deweloper)","calc.over":"≈ ponad cenę","calc.disc":"Szacunki orientacyjne dla Wspólnoty Walenckiej. Dokładny koszt potwierdzamy przy konkretnej nieruchomości.",
     "testi.eyebrow":"Już tu mieszkają","testi.h2":"Zaczęli tak samo — jedną rozmową",
     "testi.1":"„Baliśmy się formalności w obcym kraju. Okazało się, że wszystko zrobiono za nas — po polsku. Dziś pijemy kawę z widokiem na morze.”","testi.1s":"Warszawa → Torrevieja",
     "testi.2":"„Profesjonalnie i bez presji. Pokazali mi realne koszty od początku, więc nie było żadnych niespodzianek przy notariuszu.”","testi.2s":"Kraków → Altea",
@@ -762,6 +783,7 @@ const I18N = {
     "cost.eyebrow":"No surprises","cost.h2":"Full cost transparency",
     "cost.body":"Price isn't everything. Before you sign anything, we show you the real total cost — taxes, notary, registry and lawyer. You know exactly what you'll pay. Always.","cost.cta":"Calculate your cost",
     "cost.r1":"Property price","cost.r2":"Tax (transfer or VAT)","cost.r3":"Notary & registry","cost.r4":"Independent lawyer","cost.total":"Estimated total cost",
+    "calc.resale":"Resale","calc.new":"New build","calc.over":"≈ over the price","calc.disc":"Indicative estimates for the Valencian Community. We confirm the exact cost for each specific property.",
     "testi.eyebrow":"Already living here","testi.h2":"They started the same way — with one call",
     "testi.1":"“We were scared of the paperwork in a foreign country. It turned out everything was done for us — in Polish. Now we drink coffee with a sea view.”","testi.1s":"Warsaw → Torrevieja",
     "testi.2":"“Professional and no pressure. They showed me the real costs from the start, so there were no surprises at the notary.”","testi.2s":"Kraków → Altea",
@@ -815,6 +837,7 @@ const I18N = {
     "cost.eyebrow":"Sin sorpresas","cost.h2":"Transparencia total de costes",
     "cost.body":"El precio no lo es todo. Antes de firmar nada, te mostramos el coste total real: impuestos, notaría, registro y abogado. Sabes exactamente lo que pagarás. Siempre.","cost.cta":"Calcula tu coste",
     "cost.r1":"Precio de la propiedad","cost.r2":"Impuesto (ITP o IVA)","cost.r3":"Notaría y registro","cost.r4":"Abogado independiente","cost.total":"Coste total estimado",
+    "calc.resale":"Segunda mano","calc.new":"Obra nueva","calc.over":"≈ sobre el precio","calc.disc":"Estimaciones orientativas para la Comunidad Valenciana. Confirmamos el coste exacto en cada propiedad concreta.",
     "testi.eyebrow":"Ya viven aquí","testi.h2":"Empezaron igual: con una llamada",
     "testi.1":"«Nos daban miedo los trámites en un país extranjero. Resulta que lo hicieron todo por nosotros, en polaco. Hoy tomamos café con vistas al mar.»","testi.1s":"Varsovia → Torrevieja",
     "testi.2":"«Profesional y sin presión. Me enseñaron los costes reales desde el principio, así que no hubo sorpresas en la notaría.»","testi.2s":"Cracovia → Altea",
@@ -879,6 +902,32 @@ document.getElementById("leadForm").addEventListener("submit",e=>{
   document.getElementById("formFields").style.display="none";
   document.getElementById("formOk").classList.add("show");
 });
+
+// cost calculator
+(function(){
+  const priceEl=document.getElementById('calcPrice'); if(!priceEl) return;
+  const typeWrap=document.getElementById('calcType');
+  const fmt=n=>Math.round(n).toLocaleString('es-ES')+' €';
+  function recalc(){
+    const price=Math.max(0,+priceEl.value||0);
+    const type=typeWrap.querySelector('button.on').dataset.type;
+    const tax=price*(type==='new'?0.115:0.10);
+    const notary=Math.max(1000,price*0.005);
+    const lawyer=price*0.0121;
+    const extra=tax+notary+lawyer, total=price+extra;
+    document.getElementById('cTax').textContent=fmt(tax);
+    document.getElementById('cNotary').textContent=fmt(notary);
+    document.getElementById('cLawyer').textContent=fmt(lawyer);
+    document.getElementById('cTotal').textContent=fmt(total);
+    document.getElementById('cPct').textContent= price>0?('+'+Math.round(extra/price*100)+'%'):'—';
+  }
+  priceEl.addEventListener('input',recalc);
+  typeWrap.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{
+    typeWrap.querySelectorAll('button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on'); recalc();
+  }));
+  recalc();
+})();
 
 // mobile menu is CSS-only (checkbox); JS just closes it after a link tap
 const navtoggle=document.getElementById("navtoggle");
